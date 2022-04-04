@@ -257,7 +257,9 @@
       "missing_last_name": "Missing \"last_name\"",
       "missing_header": "Missing header in file column.",
       "pelias_multiple_competitions_found": "Multiple competitions with same type found.",
-      "pelias_multiple_events_found": "Multiple events with same name and date found."
+      "pelias_multiple_events_found": "Multiple events with same name and date found.",
+      "pelias_no_competition_type_found": "Competition type not found.",
+      "pelias_multiple_competition_types_found": "Multiple competition types found."
     },
     "warning": {
       "label": "Warning",

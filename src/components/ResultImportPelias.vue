@@ -528,12 +528,26 @@ export default {
         } else if (competition.length === 0) {
           await this.createCompetition(competitionType[0].id);
         }
+      } else if (competitionType.length === 0) {
+        this.$set(this.errors, "main", [
+          this.$t("import.error.pelias_no_competition_type_found") +
+            " " +
+            this.pelias.competitionDiscipline.name +
+            " " +
+            division.name
+        ]);
       } else {
         this.$set(this.errors, "main", [
-          this.$t("import.error.pelias_multiple_competitions_found")
+          this.$t(
+            "import.error.pelias_multiple_competition_types_found" +
+              " " +
+              this.pelias.competitionDiscipline.name +
+              " " +
+              division.name
+          )
         ]);
       }
-      if (this.competition) {
+      if (!this.errors.main && this.competition) {
         await this.getCategories(this.competition.type_info.sport);
         await this.getCompetitionType(this.competition.type);
         await this.getCompetitionResultTypes(this.competitionType.id);
