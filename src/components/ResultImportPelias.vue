@@ -445,6 +445,9 @@ export default {
         organization: this.event.organization,
         type: type
       };
+      competition.layout = this.competitionTypes.find(
+        obj => obj.id === type
+      ).layout;
       await HTTP.post("competitions/", competition, this.config)
         .then(response => {
           this.competition = response.data;
@@ -564,7 +567,7 @@ export default {
           ) {
             category = "L";
             rank = rank_lady;
-            rank_ladyr++;
+            rank_lady++;
           } else if (
             this.pelias.divisionResults[item].category_name === "Senior"
           ) {
