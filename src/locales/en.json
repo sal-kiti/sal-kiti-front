@@ -41,7 +41,7 @@
   },
   "event": {
     "event": "Event | Events",
-    "add": "Add event",
+    "add": "Apply event",
     "edit": "Edit event",
     "info": "Event Information",
     "error": "Could not load event information",
@@ -52,7 +52,9 @@
     "invitation": "Invitation",
     "invitation_help": "Public invitation URL for the event. E.g. https://example.org/invitation",
     "past": "Past",
-    "future": "Future"
+    "future": "Future",
+    "applied": "Applied",
+    "approved": "Approved"
   },
   "competition": {
     "competition": "Competition | Competitions",

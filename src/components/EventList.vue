@@ -40,6 +40,16 @@
         >
           {{ $tc("event.future", 2) }}
         </b-button>
+        <b-button
+          v-if="$store.state.user.is_authenticated"
+          variant="light"
+          class="btn-orange space-right space-down"
+          v-on:click="selectListed('applied')"
+          :pressed="includeApplied"
+          :key="'applied' + includeApplied"
+        >
+          {{ $tc("event.applied", 2) }}
+        </b-button>
       </b-col>
     </b-row>
     <b-row>
@@ -222,6 +232,9 @@ export default {
         searchUrl = searchUrl + "&start=" + today;
       } else {
         searchUrl = searchUrl + "&until=" + today;
+      }
+      if (!this.includeApplied) {
+        searchUrl = searchUrl + "&approved=true";
       }
       if (this.currentPage) {
         if (

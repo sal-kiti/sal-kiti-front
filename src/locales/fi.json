@@ -40,7 +40,7 @@
   },
   "event": {
     "event": "Tapahtuma | Tapahtumat",
-    "add": "Lisää tapahtuma",
+    "add": "Hae tapahtumaa",
     "edit": "Muokkaa tapahtumaa",
     "info": "Tapahtuman tiedot",
     "error": "Virhe haettaessa tapahtuman tietoja",
@@ -51,7 +51,9 @@
     "invitation": "Kilpailukutsu",
     "invitation_help": "Julkisen kilpailukutsun osoite. Esim. https://example.org/kutsu",
     "past": "Menneet",
-    "future": "Tulevat"
+    "future": "Tulevat",
+    "applied": "Haetut",
+    "approved": "Hyväksytty"
   },
   "competition": {
     "competition": "Kilpailu | Kilpailut",
