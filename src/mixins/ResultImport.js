@@ -143,7 +143,7 @@ export default {
               first_name +
               "&last_name=" +
               last_name +
-              "&organization=" +
+              "&organization__id=" +
               organizationObject[0].id;
           }
         }
