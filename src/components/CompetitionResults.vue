@@ -288,16 +288,21 @@ export default {
      */
     competition: {
       handler: function () {
-        if (this.competition && this.competition.layout) {
-          this.getCompetitionTypeLayout(this.competition.layout);
+        if (this.competition && this.competition.id) {
+          this.getResults(this.competition.id);
+          if (this.competition.layout) {
+            this.getCompetitionTypeLayout(this.competition.layout);
+          }
         }
       }
     }
   },
   mounted() {
-    this.getResults(this.$route.params.competition_id);
-    if (this.competition && this.competition.layout) {
-      this.getCompetitionTypeLayout(this.competition.layout);
+    if (this.competition && this.competition.id) {
+      this.getResults(this.competition.id);
+      if (this.competition.layout) {
+        this.getCompetitionTypeLayout(this.competition.layout);
+      }
     }
   },
   methods: {
@@ -474,7 +479,15 @@ export default {
           " " +
           category +
           ": ";
-        let results = sortByPosition(this.results[category]);
+        let position = "position";
+        if (
+          this.competition &&
+          this.competition.type_info &&
+          this.competition.type_info.sport === 5
+        ) {
+          position = "position_pre";
+        }
+        let results = sortByPosition(this.results[category], position);
         let first = true;
         for (const result in results) {
           const r = results[result];
@@ -483,18 +496,24 @@ export default {
           } else {
             first = false;
           }
-          if (r.position) {
-            content += (r.position % 100000) + ") ";
+          if (r[position]) {
+            content += (r[position] % 100000) + ") ";
           }
           if (r.team) {
             content += r.last_name;
           } else {
             content += r.first_name + " " + r.last_name + " " + r.organization;
           }
+          const partial = partialValue(r["partial"], "fsum-1");
           if (r.result_code) {
             content += " " + r.result_code;
           } else {
-            content += " " + roundValue(r.result, r.decimals);
+            if (partial) {
+              content +=
+                " " + partial + " (" + roundValue(r.result, r.decimals) + ")";
+            } else {
+              content += " " + roundValue(r.result, r.decimals);
+            }
           }
           if ("record" in r && r.record.length > 0) {
             content += " " + parseRecords(r.record, true, true);
@@ -553,6 +572,7 @@ export default {
             }
             // Change ordering (position) for silhouette (sport id 6)
             if (
+              this.competition &&
               this.competition.type_info &&
               this.competition.type_info.sport === 6
             ) {
@@ -641,7 +661,13 @@ export default {
      * @returns {string} sort key
      */
     sortKey(block) {
-      if (block === "preliminary" && this.resultBlocks.length > 1) {
+      if (
+        this.competition &&
+        this.competition.type_info &&
+        this.competition.type_info.sport === 5
+      ) {
+        return "position_pre";
+      } else if (block === "preliminary" && this.resultBlocks.length > 1) {
         return "position_pre";
       } else if (block === "preliminary" || block === "final") {
         return "position";
