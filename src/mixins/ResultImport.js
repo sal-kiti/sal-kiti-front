@@ -63,13 +63,17 @@ export default {
      * Fetch athlete information from API
      *
      * @param {string} query
+     * @param {boolean} allowMultiple
      * @returns {Promise<null>}
      */
-    async getAthlete(query) {
+    async getAthlete(query, allowMultiple = false) {
       let athlete = null;
       await HTTP.get("athletes/" + query)
         .then((response) => {
-          if (response.data.results.length === 1) {
+          if (
+            response.data.results.length === 1 ||
+            (response.data.results.length > 1 && allowMultiple)
+          ) {
             athlete = response.data.results[0];
           }
         })
@@ -139,13 +143,17 @@ export default {
               first_name +
               "&last_name=" +
               last_name +
-              "&organization=" +
+              "&organization__id=" +
               organizationObject[0].id;
           }
         }
       }
+      let allowMultiple = false;
+      if (organizationObject.length === 1 && organizationObject[0].external) {
+        allowMultiple = true;
+      }
       if (query) {
-        athlete = await this.getAthlete(query);
+        athlete = await this.getAthlete(query, allowMultiple);
       }
       /* Create a new athlete if organization is external and athlete is not found (API post) */
       if (
@@ -213,7 +221,7 @@ export default {
         if (athlete) {
           this.result.athlete = athlete.id;
           this.updateMissingAthleteInfo(i, athlete);
-          this.checkRequirements(i, athlete);
+          await this.checkRequirements(i, athlete);
           return athlete;
         } else {
           this.results[i].error.push(this.$t("import.error.athlete"));
@@ -231,9 +239,12 @@ export default {
             return null;
           }
           for (let c = 0; c < members.length; c++) {
-            const athlete = await this.getAthlete("?sport_id=" + members[c]);
+            const athlete = await this.getAthlete(
+              "?sport_id=" + members[c],
+              false
+            );
             if (athlete) {
-              this.checkRequirements(i, athlete);
+              await this.checkRequirements(i, athlete);
               memberIDs.push(athlete.id);
             } else {
               this.results[i].error.push(
@@ -271,7 +282,7 @@ export default {
               athlete_organization
             );
             if (athlete) {
-              this.checkRequirements(i, athlete);
+              await this.checkRequirements(i, athlete);
               memberIDs.push(athlete.id);
             }
           }
@@ -612,7 +623,7 @@ export default {
         } else {
           this.results[i].status = this.$t("import.status.failure");
         }
-        this.$refs.table.refresh();
+        this.$refs.table.$forceUpdate();
       }
       this.debugResults = this.results;
       await this.getResults(this.competition.id);

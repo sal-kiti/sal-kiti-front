@@ -11,7 +11,7 @@ export default function (data) {
   let partial = {};
   /* Header row is usually around 7th line */
   for (const row in data) {
-    if (data[row].length > 1 && data[row][1] === "Rank") {
+    if (data[row].length > 1 && ["Rank", "Sija"].includes(data[row][1])) {
       headerRow = parseInt(row);
       break;
     }
@@ -20,34 +20,43 @@ export default function (data) {
     for (const col in data[headerRow]) {
       switch (data[headerRow][col]) {
         case "Rank":
+        case "Sija":
           headers.rank = parseInt(col);
           break;
         case "Bib No":
+        case "Amp.  nro":
+        case "Amp. nro":
           headers.id = parseInt(col);
           break;
         case "Category":
           headers.category = parseInt(col);
           break;
         case "Name":
+        case "Nimi":
           headers.name = parseInt(col);
           break;
         case "Nation":
         case "Nat":
+        case "Seura":
           headers.organization = parseInt(col);
           break;
         case "Total":
           headers.total = parseInt(col);
           break;
         case "Remarks":
+        case "Huomio":
           headers.remarks = parseInt(col);
           break;
         case "Sub Total":
+        case "Väli tulos":
           headers.subtotal = parseInt(col);
           break;
         case "Series":
+        case "Sarjat":
           headers.series = parseInt(col);
           break;
         case "Position":
+        case "Asento":
           headers.position = parseInt(col);
           break;
         default:
@@ -94,6 +103,8 @@ export default function (data) {
             if (total.includes("-")) {
               result.result = total.split("-")[0].trim();
               result["x-1"] = total.split("-")[1].split("x")[0].trim();
+            } else {
+              result.result = total.trim();
             }
           }
         }

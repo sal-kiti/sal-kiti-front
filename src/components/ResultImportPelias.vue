@@ -1,4 +1,3 @@
-F
 <template>
   <div>
     <b-row>
@@ -556,6 +555,7 @@ export default {
       if (!this.errors.main && this.competition) {
         await this.getCategories(this.competition.type_info.sport);
         await this.getCompetitionType(this.competition.type);
+        await this.getCompetitionLevel(this.competition.level);
         await this.getCompetitionResultTypes(this.competitionType.id);
         await this.getOrganizations(true, false, false);
         await this.getResults(this.competition.id);
@@ -569,6 +569,7 @@ export default {
         let rank_senior = 1;
         let rank_supersenior = 1;
         let rank_yleinen = 1;
+        let organization = "";
         for (let item in this.pelias.divisionResults) {
           let rank = 0;
           let category = "Y";
@@ -604,6 +605,15 @@ export default {
             rank = rank_yleinen;
             rank_yleinen++;
           }
+          if (
+            "region" in this.pelias.divisionResults[item] &&
+            this.pelias.divisionResults[item].region &&
+            this.pelias.divisionResults[item].region !== "FIN"
+          ) {
+            organization = this.pelias.divisionResults[item].region;
+          } else {
+            organization = this.pelias.divisionResults[item].club_shortname;
+          }
           let result = {
             category: category,
             elimination_category: "Y",
@@ -611,7 +621,7 @@ export default {
             first_name: this.pelias.divisionResults[item].member_firstname,
             sport_id: this.pelias.divisionResults[item].member_sportti_id || "",
             result: this.pelias.divisionResults[item].percentage,
-            organization: this.pelias.divisionResults[item].club_shortname,
+            organization: organization,
             position_pre: parseInt(this.pelias.divisionResults[item].rank),
             position: rank
           };
