@@ -126,21 +126,17 @@
           <dd v-if="!event.approved">
             {{ $t("no") }}
             <b-button
+              v-if="$store.state.editMode"
               size="sm"
               variant="outline-danger"
               v-on:click="toggleApprovedStatus()"
-              v-if="$store.state.editMode"
             >
               {{ $t("change") }}
             </b-button>
           </dd>
         </dl>
       </b-col>
-      <b-col
-        cols="6"
-        md="3"
-        v-if="$store.state.user.is_staff"
-      >
+      <b-col cols="6" md="3" v-if="$store.state.user.is_staff">
         <dl>
           <dt>{{ $t("competition.visibility") }}</dt>
           <dd v-if="competition.public">
