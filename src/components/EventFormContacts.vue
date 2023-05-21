@@ -1,16 +1,16 @@
 <template>
   <div>
-    <b-row>
+    <b-row v-if="contacts.length > 0 || edit">
       <b-col>
         <h3 class="bg-sal-orange">{{ $tc("contact.contact", 2) }}</h3>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row v-if="contacts.length > 0 || edit">
       <b-col>
         <p>{{ $t("contact.contact_info") }}</p>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row v-if="contacts.length > 0">
       <b-col>
         <div>
           <b-table

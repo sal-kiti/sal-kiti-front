@@ -208,7 +208,10 @@
     </b-row>
     <b-row v-if="$store.state.user.is_authenticated && event">
       <b-col>
-        <EventFormContacts :eventId="event.id" :edit="false" />
+        <EventFormContacts
+          :eventId="parseInt($route.params.event_id)"
+          :edit="false"
+        />
       </b-col>
     </b-row>
   </div>
