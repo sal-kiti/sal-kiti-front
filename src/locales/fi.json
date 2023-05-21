@@ -60,7 +60,8 @@
     "future": "Tulevat",
     "applied": "Haetut",
     "approved": "Hyväksytty",
-    "move_to_contacts": "Tallenna ja jatka lisäämään yhteystiedot"
+    "move_to_contacts": "Tallenna ja jatka lisäämään yhteystiedot",
+    "return": "Tapahtumasivu"
   },
   "contact": {
     "contact": "Yhteystieto | Yhteystiedot",

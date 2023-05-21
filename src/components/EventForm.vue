@@ -5,6 +5,20 @@
         <h1 v-if="edit">{{ event.name }}</h1>
         <h1 v-else>{{ $tc("event.event", 2) }}</h1>
       </b-col>
+      <b-col v-if="edit">
+        <b-button
+          :to="{
+            name: 'event',
+            params: {
+              event_id: eventId
+            }
+          }"
+          variant="light"
+          class="btn-orange float-right"
+        >
+          {{ $tc("event.return", 2) }}
+        </b-button>
+      </b-col>
     </b-row>
     <b-row>
       <b-col>

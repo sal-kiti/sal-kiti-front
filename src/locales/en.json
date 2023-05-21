@@ -61,7 +61,8 @@
     "future": "Future",
     "applied": "Applied",
     "approved": "Approved",
-    "move_to_contacts": "Save and continue to add contacts"
+    "move_to_contacts": "Save and continue to add contacts",
+    "return": "Event page"
   },
   "contact": {
     "contact": "Contact | Contacts",
