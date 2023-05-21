@@ -58,6 +58,11 @@
               valueField="key"
               required
             ></b-form-select>
+            <b-form-invalid-feedback :state="!'type' in errors">
+              <ul>
+                <li v-for="e in errors.type" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <b-form-group
             :id="'contact-add-first-name'"
@@ -69,6 +74,11 @@
               v-model="addContact.first_name"
               required
             ></b-form-input>
+            <b-form-invalid-feedback :state="!'first_name' in errors">
+              <ul>
+                <li v-for="e in errors.first_name" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <b-form-group
             :id="'contact-add-last-name'"
@@ -80,6 +90,11 @@
               v-model="addContact.last_name"
               required
             ></b-form-input>
+            <b-form-invalid-feedback :state="!'last_name' in errors">
+              <ul>
+                <li v-for="e in errors.last_name" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <b-form-group
             :id="'contact-add-email'"
@@ -90,6 +105,11 @@
               id="input-ct-email"
               v-model="addContact.email"
             ></b-form-input>
+            <b-form-invalid-feedback :state="!'email' in errors">
+              <ul>
+                <li v-for="e in errors.email" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <b-form-group
             :id="'contact-add-phone'"
@@ -100,6 +120,11 @@
               id="input-ct-phone"
               v-model="addContact.phone"
             ></b-form-input>
+            <b-form-invalid-feedback :state="!'phone' in errors">
+              <ul>
+                <li v-for="e in errors.phone" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <div>
             <b-button
@@ -227,6 +252,7 @@ export default {
      * @returns {Promise<void>}
      */
     async postContact(contact) {
+      this.errors = {};
       HTTP.post("eventcontacts/", contact, this.config)
         .then((response) => {
           if (response.status === 201) {
@@ -234,11 +260,7 @@ export default {
           }
         })
         .catch((error) => {
-          this.$set(
-            this.errors,
-            "main",
-            errorParser.partialResult.bind(this)(error)
-          );
+          this.errors = errorParser.form.bind(this)(error);
         });
     },
     /**
@@ -264,6 +286,7 @@ export default {
      * @param {object} contact
      */
     async deleteContact(contact) {
+      this.errors = {};
       HTTP.delete("eventcontacts/" + contact.id + "/", this.config)
         .then((response) => {
           if (response.status === 204) {
@@ -271,11 +294,7 @@ export default {
           }
         })
         .catch((error) => {
-          this.$set(
-            this.errors,
-            contact.id,
-            errorParser.partialResult.bind(this)(error)
-          );
+          this.errors = errorParser.form.bind(this)(error);
         });
     }
   }

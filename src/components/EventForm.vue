@@ -160,6 +160,11 @@
               max-rows="6"
             >
             </b-form-textarea>
+            <b-form-invalid-feedback :state="!'categories' in errors">
+              <ul>
+                <li v-for="e in errors.categories" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <b-form-group
             id="input-group-web_page"
@@ -197,6 +202,11 @@
           >
             <b-form-checkbox id="input-safety_plan" v-model="event.safety_plan">
             </b-form-checkbox>
+            <b-form-invalid-feedback :state="!'safety_plan' in errors">
+              <ul>
+                <li v-for="e in errors.safety_plan" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <b-form-group
             id="input-group-notes"
@@ -211,6 +221,11 @@
               max-rows="6"
             >
             </b-form-textarea>
+            <b-form-invalid-feedback :state="!'notes' in errors">
+              <ul>
+                <li v-for="e in errors.notes" v-bind:key="e">{{ e }}</li>
+              </ul>
+            </b-form-invalid-feedback>
           </b-form-group>
           <div>
             <b-button
