@@ -64,7 +64,7 @@ export default [
     path: "/event/create/",
     name: "event-create",
     component: () =>
-      import(/* webpackChunkName: "event-manage" */ "./views/EventManage.vue")
+      import(/* webpackChunkName: "event-manage" */ "./views/EventCreate.vue")
   },
   {
     path: "/event/:event_id",

@@ -229,9 +229,9 @@ export default {
       let searchUrl = "events/?limit=" + this.limit;
       let today = new Date().toJSON().slice(0, 10);
       if (this.listFuture) {
-        searchUrl = searchUrl + "&start=" + today;
+        searchUrl = searchUrl + "&start=" + today + "&ordering=date_start";
       } else {
-        searchUrl = searchUrl + "&until=" + today;
+        searchUrl = searchUrl + "&until=" + today + "&ordering=-date_start";
       }
       if (!this.includeApplied) {
         searchUrl = searchUrl + "&approved=true";
@@ -293,6 +293,7 @@ export default {
     selectListed(item) {
       if (item === "future") {
         this.listFuture = !this.listFuture;
+        this.includeApplied = false;
       }
       if (item === "applied") {
         this.includeApplied = !this.includeApplied;

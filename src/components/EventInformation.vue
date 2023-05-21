@@ -78,6 +78,29 @@
           <dd>{{ event.location }}</dd>
         </dl>
       </b-col>
+      <b-col cols="3" v-if="$store.state.user.is_staff">
+        <dl>
+          <dt>{{ $t("event.safety_plan") }}</dt>
+          <dd v-if="event.safety_plan">
+            {{ $t("yes") }}
+          </dd>
+          <dd v-else>
+            {{ $t("no") }}
+          </dd>
+        </dl>
+      </b-col>
+      <b-col cols="12" v-if="$store.state.user.is_staff">
+        <dl>
+          <dt>{{ $t("event.categories") }}</dt>
+          <dd>{{ event.categories }}</dd>
+        </dl>
+      </b-col>
+      <b-col cols="12" v-if="$store.state.user.is_staff">
+        <dl>
+          <dt>{{ $t("event.notes") }}</dt>
+          <dd>{{ event.notes }}</dd>
+        </dl>
+      </b-col>
       <b-col cols="6" md="3" v-if="$store.state.user.is_staff">
         <dl>
           <dt>{{ $t("competition.status") }}</dt>
@@ -183,6 +206,11 @@
         </dl>
       </b-col>
     </b-row>
+    <b-row v-if="$store.state.user.is_authenticated && event">
+      <b-col>
+        <EventFormContacts :eventId="event.id" :edit="false" />
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -196,10 +224,14 @@ import { HTTP } from "../api/BaseApi.js";
 import getCookie from "../utils/GetCookie";
 import errorParser from "../utils/ErrorParser";
 import apiGet from "../mixins/ApiGet";
+import EventFormContacts from "@/components/EventFormContacts.vue";
 
 export default {
   name: "EventInformation",
   mixins: [apiGet],
+  components: {
+    EventFormContacts
+  },
   data() {
     return {
       config: {

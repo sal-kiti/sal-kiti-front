@@ -2,6 +2,12 @@
   <div>
     <b-row>
       <b-col>
+        <h1 v-if="edit">{{ event.name }}</h1>
+        <h1 v-else>{{ $tc("event.event", 2) }}</h1>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
         <h2 class="bg-sal-orange" v-if="edit">{{ $t("event.edit") }}</h2>
         <h2 class="bg-sal-orange" v-else>{{ $t("event.add") }}</h2>
       </b-col>
@@ -128,6 +134,20 @@
             </b-form-invalid-feedback>
           </b-form-group>
           <b-form-group
+            id="input-group-categories"
+            :label="$t('event.categories')"
+            label-for="input-categories"
+            :description="$t('event.categories_help')"
+          >
+            <b-form-textarea
+              id="input-categories"
+              v-model="event.categories"
+              rows="3"
+              max-rows="6"
+            >
+            </b-form-textarea>
+          </b-form-group>
+          <b-form-group
             id="input-group-web_page"
             :label="$t('event.web_page')"
             label-for="input-web_page"
@@ -155,6 +175,29 @@
               </ul>
             </b-form-invalid-feedback>
           </b-form-group>
+          <b-form-group
+            id="input-group-safety_plan"
+            :label="$t('event.safety_plan')"
+            label-for="input-safety_plan"
+            :description="$t('event.safety_plan_help')"
+          >
+            <b-form-checkbox id="input-safety_plan" v-model="event.safety_plan">
+            </b-form-checkbox>
+          </b-form-group>
+          <b-form-group
+            id="input-group-notes"
+            :label="$t('event.notes')"
+            label-for="input-notes"
+            :description="$t('event.notes_help')"
+          >
+            <b-form-textarea
+              id="input-notes"
+              v-model="event.notes"
+              rows="3"
+              max-rows="6"
+            >
+            </b-form-textarea>
+          </b-form-group>
           <div>
             <b-button
               type="submit"
@@ -162,11 +205,16 @@
               class="btn-orange space-right"
             >
               <section v-if="edit">{{ $t("update") }}</section>
-              <section v-else>{{ $t("create") }}</section>
+              <section v-else>{{ $t("event.move_to_contacts") }}</section>
             </b-button>
           </div>
           <br />
         </b-form>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <EventFormContacts v-if="eventId" :eventId="eventId" :edit="true" />
       </b-col>
     </b-row>
   </div>
@@ -180,10 +228,14 @@ import { HTTP } from "../api/BaseApi.js";
 import getCookie from "../utils/GetCookie";
 import errorParser from "../utils/ErrorParser";
 import apiGet from "../mixins/ApiGet";
+import EventFormContacts from "@/components/EventFormContacts.vue";
 
 export default {
   name: "EventForm",
   mixins: [apiGet],
+  components: {
+    EventFormContacts
+  },
   data() {
     return {
       config: {
@@ -201,8 +253,11 @@ export default {
         name: null,
         description: "",
         organization: null,
+        categories: "",
+        notes: "",
         web_page: "",
         invitation: "",
+        safety_plan: false,
         toc_agreement: true
       },
       loadingEvent: false,
@@ -215,7 +270,7 @@ export default {
     if (this.$route.params.event_id) {
       this.edit = true;
       this.getEvent(this.$route.params.event_id);
-      this.eventId = this.$route.params.event_id.toString();
+      this.eventId = parseInt(this.$route.params.event_id);
     }
   },
   methods: {
@@ -238,13 +293,13 @@ export default {
      * @returns {Promise<void>}
      */
     async postEvent() {
-      this.erros = {};
+      this.error = {};
       this.event.toc_agreement = true;
       HTTP.post("events/", this.event, this.config)
         .then((response) => {
           this.$router.push({
-            name: "event",
-            params: { event_id: response.data.id }
+            name: "event-update",
+            params: { event_id: response.data.id.toString() }
           });
         })
         .catch((error) => {
@@ -258,13 +313,13 @@ export default {
      * @returns {Promise<void>}
      */
     async putEvent(id) {
-      this.erros = {};
+      this.error = {};
       this.event.toc_agreement = true;
       HTTP.put("events/" + id + "/", this.event, this.config)
         .then((response) => {
           this.$router.push({
             name: "event",
-            params: { event_id: response.data.id }
+            params: { event_id: response.data.id.toString() }
           });
         })
         .catch((error) => {
