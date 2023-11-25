@@ -61,7 +61,8 @@
     "applied": "Haetut",
     "approved": "Hyväksytty",
     "move_to_contacts": "Tallenna ja jatka lisäämään yhteystiedot",
-    "return": "Tapahtumasivu"
+    "return": "Tapahtumasivu",
+    "continue_to_competitions": "Jatka lisäämään tapahtuman kilpailut"
   },
   "contact": {
     "contact": "Yhteystieto | Yhteystiedot",

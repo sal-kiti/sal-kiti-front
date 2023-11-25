@@ -130,10 +130,22 @@
             <b-button
               type="submit"
               variant="light"
-              class="btn-orange space-right"
+              class="btn-orange space-right mb-5"
               v-on:click="postContact(addContact)"
             >
               {{ $t("create") }}
+            </b-button>
+            <b-button
+              :to="{
+                name: 'event',
+                params: {
+                  event_id: eventId
+                }
+              }"
+              variant="light"
+              class="btn-orange float-right"
+            >
+              {{ $tc("event.continue_to_competitions", 2) }}
             </b-button>
           </div>
         </b-col>

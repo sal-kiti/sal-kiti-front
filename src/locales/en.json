@@ -62,7 +62,8 @@
     "applied": "Applied",
     "approved": "Approved",
     "move_to_contacts": "Save and continue to add contacts",
-    "return": "Event page"
+    "return": "Event page",
+    "continue_to_competitions": "Continue to add competitions to the event"
   },
   "contact": {
     "contact": "Contact | Contacts",
