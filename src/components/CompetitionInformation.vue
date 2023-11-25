@@ -111,8 +111,8 @@
       </b-col>
       <b-col cols="6" md="3" v-if="$store.state.user.is_staff">
         <dl>
-          <dt>{{ $t("event.approved") }}</dt>
-          <dd v-if="event.approved">
+          <dt>{{ $t("competition.approved") }}</dt>
+          <dd v-if="competition.approved">
             {{ $t("yes") }}
             <b-button
               size="sm"
@@ -123,7 +123,7 @@
               {{ $t("change") }}
             </b-button>
           </dd>
-          <dd v-if="!event.approved">
+          <dd v-if="!competition.approved">
             {{ $t("no") }}
             <b-button
               v-if="$store.state.editMode"
@@ -305,7 +305,7 @@ export default {
         .finally(() => (this.loadingCompetition = false));
     },
     /**
-     * Set competition approved status for event and competitions (API patch)
+     * Set competition approved status for competition (API patch)
      *
      * @returns {Promise<void>}
      */

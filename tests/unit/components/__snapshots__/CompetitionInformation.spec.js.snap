@@ -155,6 +155,8 @@ exports[`CompetitionInformation.vue renders Competition information 1`] = `
     <!---->
      
     <!---->
+     
+    <!---->
   </b-row-stub>
 </div>
 `;
@@ -304,6 +306,8 @@ exports[`CompetitionInformation.vue show management options for organization use
         </dd>
       </dl>
     </b-col-stub>
+     
+    <!---->
      
     <!---->
      
@@ -489,6 +493,37 @@ exports[`CompetitionInformation.vue show management options for staff 1`] = `
           >
             
             competition.lock
+          
+          </b-button-stub>
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          competition.approved
+        </dt>
+         
+        <!---->
+         
+        <dd>
+          
+          no
+          
+          <b-button-stub
+            size="sm"
+            tag="button"
+            target="_self"
+            type="button"
+            variant="outline-danger"
+          >
+            
+            change
           
           </b-button-stub>
         </dd>
