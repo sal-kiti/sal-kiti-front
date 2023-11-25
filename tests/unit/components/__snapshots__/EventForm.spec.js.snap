@@ -8,6 +8,20 @@ exports[`EventForm.vue renders event form with even information 1`] = `
     <b-col-stub
       tag="div"
     >
+      <h1>
+        event.event
+      </h1>
+    </b-col-stub>
+     
+    <!---->
+  </b-row-stub>
+   
+  <b-row-stub
+    tag="div"
+  >
+    <b-col-stub
+      tag="div"
+    >
       <h2
         class="bg-sal-orange"
       >
@@ -170,6 +184,30 @@ exports[`EventForm.vue renders event form with even information 1`] = `
         </b-form-group-stub>
          
         <b-form-group-stub
+          description="event.categories_help"
+          feedbackarialive="assertive"
+          id="input-group-categories"
+          label="event.categories"
+          labelfor="input-categories"
+        >
+          <b-form-textarea-stub
+            debounce="0"
+            formatter="[Function]"
+            id="input-categories"
+            maxrows="6"
+            rows="3"
+            value=""
+            wrap="soft"
+          />
+           
+          <b-form-invalid-feedback-stub
+            tag="div"
+          >
+            <ul />
+          </b-form-invalid-feedback-stub>
+        </b-form-group-stub>
+         
+        <b-form-group-stub
           description="event.web_page_help"
           feedbackarialive="assertive"
           id="input-group-web_page"
@@ -213,6 +251,49 @@ exports[`EventForm.vue renders event form with even information 1`] = `
           </b-form-invalid-feedback-stub>
         </b-form-group-stub>
          
+        <b-form-group-stub
+          description="event.safety_plan_help"
+          feedbackarialive="assertive"
+          id="input-group-safety_plan"
+          label="event.safety_plan"
+          labelfor="input-safety_plan"
+        >
+          <b-form-checkbox-stub
+            id="input-safety_plan"
+            value="true"
+          />
+           
+          <b-form-invalid-feedback-stub
+            tag="div"
+          >
+            <ul />
+          </b-form-invalid-feedback-stub>
+        </b-form-group-stub>
+         
+        <b-form-group-stub
+          description="event.notes_help"
+          feedbackarialive="assertive"
+          id="input-group-notes"
+          label="event.notes"
+          labelfor="input-notes"
+        >
+          <b-form-textarea-stub
+            debounce="0"
+            formatter="[Function]"
+            id="input-notes"
+            maxrows="6"
+            rows="3"
+            value=""
+            wrap="soft"
+          />
+           
+          <b-form-invalid-feedback-stub
+            tag="div"
+          >
+            <ul />
+          </b-form-invalid-feedback-stub>
+        </b-form-group-stub>
+         
         <div>
           <b-button-stub
             class="btn-orange space-right"
@@ -222,13 +303,23 @@ exports[`EventForm.vue renders event form with even information 1`] = `
             variant="light"
           >
             <section>
-              create
+              event.move_to_contacts
             </section>
           </b-button-stub>
         </div>
          
         <br />
       </b-form-stub>
+    </b-col-stub>
+  </b-row-stub>
+   
+  <b-row-stub
+    tag="div"
+  >
+    <b-col-stub
+      tag="div"
+    >
+      <!---->
     </b-col-stub>
   </b-row-stub>
 </div>

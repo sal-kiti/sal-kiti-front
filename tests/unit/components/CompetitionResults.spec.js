@@ -29,6 +29,7 @@ describe("CompetitionResults.vue", () => {
       },
       propsData: {
         competition: {
+          id: 1,
           type: 1,
           layout: 1
         },
@@ -49,6 +50,7 @@ describe("CompetitionResults.vue", () => {
       store,
       propsData: {
         competition: {
+          id: 99,
           type: 1,
           layout: 1
         },

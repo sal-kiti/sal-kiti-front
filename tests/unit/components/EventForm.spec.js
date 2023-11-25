@@ -52,14 +52,14 @@ describe("EventForm.vue", () => {
     });
     await wrapper.vm.postEvent();
     expect($router.push).toHaveBeenCalledWith({
-      name: "event",
-      params: { event_id: 5 }
+      name: "event-update",
+      params: { event_id: "5" }
     });
   });
 
   it("updates event data", async () => {
     const $route = {
-      params: { query: { event_id: 1 } }
+      params: { query: { event_id: 2 } }
     };
     const wrapper = shallowMount(EventForm, {
       localVue,
@@ -69,10 +69,10 @@ describe("EventForm.vue", () => {
       }
     });
     wrapper.vm.$data.event.name = "Village Champs";
-    await wrapper.vm.putEvent(1);
+    await wrapper.vm.putEvent(2);
     expect($router.push).toHaveBeenCalledWith({
       name: "event",
-      params: { event_id: 1 }
+      params: { event_id: "2" }
     });
   });
 });

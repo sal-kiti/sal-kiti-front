@@ -38,9 +38,7 @@ exports[`StatisticsForm.vue renders statistics search form 1`] = `
     <b-col-stub
       tag="div"
     >
-      <router-link
-        to="[object Object]"
-      >
+      <a>
         <b-button-stub
           class="btn-orange space-right space-down"
           tag="button"
@@ -52,7 +50,7 @@ exports[`StatisticsForm.vue renders statistics search form 1`] = `
           statistics.links
         
         </b-button-stub>
-      </router-link>
+      </a>
        
       <!---->
     </b-col-stub>

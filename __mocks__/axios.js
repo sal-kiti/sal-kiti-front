@@ -17,6 +17,7 @@ const competitions = {
       },
       public: false,
       locked: false,
+      approved: false,
       event: 1,
       event_info: {
         name: "EventName"
@@ -42,6 +43,7 @@ const competitions = {
       },
       public: true,
       locked: true,
+      approved: true,
       event: 1,
       event_info: {
         name: "EventName"
@@ -78,7 +80,8 @@ const events = {
         }
       ],
       public: false,
-      locked: false
+      locked: false,
+      approved: false,
     },
     {
       id: 2,
@@ -95,7 +98,8 @@ const events = {
       invitation: "https://test.example.org/invitationpage",
       categories: "International categories only",
       public: true,
-      locked: true
+      locked: true,
+      approved: true,
     }
   ]
 };

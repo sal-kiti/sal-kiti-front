@@ -1,4 +1,4 @@
-import { createLocalVue, shallowMount } from "@vue/test-utils";
+import {createLocalVue, RouterLinkStub, shallowMount} from "@vue/test-utils";
 import StatisticsForm from "@/components/StatisticsForm.vue";
 import BootstrapVue from "bootstrap-vue";
 import Vuex from "vuex";
@@ -42,7 +42,8 @@ describe("StatisticsForm.vue", () => {
       mocks: {
         $route,
         $router
-      }
+      },
+      stubs: { "router-link": RouterLinkStub }
     });
     wrapper.setData({
       showExtraFields: true
@@ -61,7 +62,8 @@ describe("StatisticsForm.vue", () => {
       mocks: {
         $route,
         $router
-      }
+      },
+      stubs: { "router-link": RouterLinkStub }
     });
     wrapper.setData({
       form: formData
@@ -87,7 +89,8 @@ describe("StatisticsForm.vue", () => {
       mocks: {
         $route,
         $router
-      }
+      },
+      stubs: { "router-link": RouterLinkStub }
     });
     wrapper.setData({
       form: formData
