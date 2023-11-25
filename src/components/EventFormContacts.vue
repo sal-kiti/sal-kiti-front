@@ -58,7 +58,7 @@
               valueField="key"
               required
             ></b-form-select>
-            <b-form-invalid-feedback :state="!'type' in errors">
+            <b-form-invalid-feedback :state="(!'type') in errors">
               <ul>
                 <li v-for="e in errors.type" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -74,7 +74,7 @@
               v-model="addContact.first_name"
               required
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'first_name' in errors">
+            <b-form-invalid-feedback :state="(!'first_name') in errors">
               <ul>
                 <li v-for="e in errors.first_name" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -90,7 +90,7 @@
               v-model="addContact.last_name"
               required
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'last_name' in errors">
+            <b-form-invalid-feedback :state="(!'last_name') in errors">
               <ul>
                 <li v-for="e in errors.last_name" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -105,7 +105,7 @@
               id="input-ct-email"
               v-model="addContact.email"
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'email' in errors">
+            <b-form-invalid-feedback :state="(!'email') in errors">
               <ul>
                 <li v-for="e in errors.email" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -120,7 +120,7 @@
               id="input-ct-phone"
               v-model="addContact.phone"
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'phone' in errors">
+            <b-form-invalid-feedback :state="(!'phone') in errors">
               <ul>
                 <li v-for="e in errors.phone" v-bind:key="e">{{ e }}</li>
               </ul>

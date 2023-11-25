@@ -57,7 +57,7 @@
               required
             >
             </b-form-select>
-            <b-form-invalid-feedback :state="!'organization' in errors">
+            <b-form-invalid-feedback :state="(!'organization') in errors">
               <ul>
                 <li v-for="e in errors.organization" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -73,7 +73,7 @@
               v-model="event.name"
               required
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'name' in errors">
+            <b-form-invalid-feedback :state="(!'name') in errors">
               <ul>
                 <li v-for="e in errors.name" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -91,7 +91,7 @@
               rows="3"
               max-rows="6"
             ></b-form-textarea>
-            <b-form-invalid-feedback :state="!'description' in errors">
+            <b-form-invalid-feedback :state="(!'description') in errors">
               <ul>
                 <li v-for="e in errors.description" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -107,7 +107,7 @@
               v-model="event.location"
               required
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'location' in errors">
+            <b-form-invalid-feedback :state="(!'location') in errors">
               <ul>
                 <li v-for="e in errors.location" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -124,7 +124,7 @@
               type="date"
               required
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'date_start' in errors">
+            <b-form-invalid-feedback :state="(!'date_start') in errors">
               <ul>
                 <li v-for="e in errors.date_start" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -141,7 +141,7 @@
               type="date"
               required
             ></b-form-input>
-            <b-form-invalid-feedback :state="!'date_end' in errors">
+            <b-form-invalid-feedback :state="(!'date_end') in errors">
               <ul>
                 <li v-for="e in errors.date_end" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -160,7 +160,7 @@
               max-rows="6"
             >
             </b-form-textarea>
-            <b-form-invalid-feedback :state="!'categories' in errors">
+            <b-form-invalid-feedback :state="(!'categories') in errors">
               <ul>
                 <li v-for="e in errors.categories" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -174,7 +174,7 @@
           >
             <b-form-input id="input-web_page" v-model="event.web_page">
             </b-form-input>
-            <b-form-invalid-feedback :state="!'web_page' in errors">
+            <b-form-invalid-feedback :state="(!'web_page') in errors">
               <ul>
                 <li v-for="e in errors.web_page" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -188,7 +188,7 @@
           >
             <b-form-input id="input-invitation" v-model="event.invitation">
             </b-form-input>
-            <b-form-invalid-feedback :state="!'invitation' in errors">
+            <b-form-invalid-feedback :state="(!'invitation') in errors">
               <ul>
                 <li v-for="e in errors.invitation" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -202,7 +202,7 @@
           >
             <b-form-checkbox id="input-safety_plan" v-model="event.safety_plan">
             </b-form-checkbox>
-            <b-form-invalid-feedback :state="!'safety_plan' in errors">
+            <b-form-invalid-feedback :state="(!'safety_plan') in errors">
               <ul>
                 <li v-for="e in errors.safety_plan" v-bind:key="e">{{ e }}</li>
               </ul>
@@ -221,7 +221,7 @@
               max-rows="6"
             >
             </b-form-textarea>
-            <b-form-invalid-feedback :state="!'notes' in errors">
+            <b-form-invalid-feedback :state="(!'notes') in errors">
               <ul>
                 <li v-for="e in errors.notes" v-bind:key="e">{{ e }}</li>
               </ul>
