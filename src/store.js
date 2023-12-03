@@ -11,7 +11,8 @@ export default new Vuex.Store({
     spaVersion: null,
     user: {
       is_authenticated: false,
-      is_staff: false
+      is_staff: false,
+      manager: []
     },
     editMode: false
   },
@@ -42,6 +43,7 @@ export default new Vuex.Store({
           commit("setUserInfo", {
             is_authenticated: false,
             is_staff: false,
+            manager: [],
             error: error.response
           });
         });

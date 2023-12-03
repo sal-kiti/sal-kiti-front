@@ -1,4 +1,4 @@
-import {createLocalVue, RouterLinkStub, shallowMount} from "@vue/test-utils";
+import { createLocalVue, RouterLinkStub, shallowMount } from "@vue/test-utils";
 import StatisticsForm from "@/components/StatisticsForm.vue";
 import BootstrapVue from "bootstrap-vue";
 import Vuex from "vuex";

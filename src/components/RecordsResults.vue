@@ -57,7 +57,11 @@
               <div v-if="data.item.historical">
                 {{ $t("record.historical") }}
                 <b-button
-                  v-if="$store.state.editMode && $store.state.user.is_staff"
+                  v-if="
+                    $store.state.editMode &&
+                    ($store.state.user.is_staff ||
+                      data.item.permissions.update === true)
+                  "
                   size="sm"
                   variant="outline-danger"
                   v-on:click="toggleHistorical(data)"
@@ -68,7 +72,11 @@
               <div v-else-if="data.item.approved">
                 {{ $t("record.approved") }}
                 <b-button
-                  v-if="$store.state.editMode && $store.state.user.is_staff"
+                  v-if="
+                    $store.state.editMode &&
+                    ($store.state.user.is_staff ||
+                      data.item.permissions.update === true)
+                  "
                   size="sm"
                   variant="outline-danger"
                   class="space-right"
@@ -78,7 +86,11 @@
                   {{ $t("record.cancel_approval") }}
                 </b-button>
                 <b-button
-                  v-if="$store.state.editMode && $store.state.user.is_staff"
+                  v-if="
+                    $store.state.editMode &&
+                    ($store.state.user.is_staff ||
+                      data.item.permissions.update === true)
+                  "
                   size="sm"
                   variant="outline-danger"
                   v-on:click="toggleHistorical(data)"
@@ -89,7 +101,11 @@
               <div v-else>
                 {{ $t("record.preliminary") }}
                 <b-button
-                  v-if="$store.state.editMode && $store.state.user.is_staff"
+                  v-if="
+                    $store.state.editMode &&
+                    ($store.state.user.is_staff ||
+                      data.item.permissions.update === true)
+                  "
                   size="sm"
                   variant="outline-success"
                   class="space-right"
@@ -100,8 +116,9 @@
                 <b-button
                   v-if="
                     $store.state.editMode &&
-                    $store.state.user.is_staff &&
-                    !data.item.approved
+                    !data.item.approved &&
+                    ($store.state.user.is_staff ||
+                      data.item.permissions.update === true)
                   "
                   class="btn-danger"
                   v-on:click="deleteConfirm(data.item.id)"

@@ -161,6 +161,167 @@ exports[`CompetitionInformation.vue renders Competition information 1`] = `
 </div>
 `;
 
+exports[`CompetitionInformation.vue show management options for area managers 1`] = `
+<div>
+  <b-row-stub
+    tag="div"
+  >
+    <b-col-stub
+      tag="div"
+    >
+      <h2
+        class="bg-sal-orange"
+      >
+        competition.info
+      </h2>
+    </b-col-stub>
+  </b-row-stub>
+   
+  <b-row-stub
+    tag="div"
+  >
+    <b-col-stub
+      tag="div"
+    >
+      <!---->
+    </b-col-stub>
+  </b-row-stub>
+   
+  <!---->
+   
+  <b-row-stub
+    tag="div"
+  >
+    <b-col-stub
+      cols="12"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          description
+        </dt>
+         
+        <dd>
+          EC on the Village Field
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          date
+        </dt>
+         
+        <dd>
+          
+          2019-02-23
+        
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          event.event
+        </dt>
+         
+        <dd>
+          <a>
+            EventName
+          </a>
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          competition.type
+        </dt>
+         
+        <dd>
+          10m Competition
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          competition.level
+        </dt>
+         
+        <dd>
+          
+          European Championships
+        
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          organizer
+        </dt>
+         
+        <!---->
+      </dl>
+    </b-col-stub>
+     
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          location
+        </dt>
+         
+        <dd>
+          
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+     
+    <!---->
+  </b-row-stub>
+</div>
+`;
+
 exports[`CompetitionInformation.vue show management options for organization user 1`] = `
 <div>
   <b-row-stub

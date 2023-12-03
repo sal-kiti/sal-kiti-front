@@ -8,7 +8,7 @@ const localVue = createLocalVue();
 localVue.use(BootstrapVue);
 localVue.use(Vuex);
 
-let state = { user: { is_authenticated: false } };
+let state = { user: { is_authenticated: false, manager: [] } };
 let store = new Vuex.Store({ state });
 
 describe("CompetitionInformation.vue", () => {
@@ -31,7 +31,38 @@ describe("CompetitionInformation.vue", () => {
   it("show management options for staff", async () => {
     state = {
       editMode: true,
-      user: { is_authenticated: true, is_staff: true, is_superuser: true }
+      user: {
+        is_authenticated: true,
+        is_staff: true,
+        is_superuser: true,
+        manager: []
+      }
+    };
+    store = new Vuex.Store({ state });
+    const $route = {
+      params: { competition_id: 1 }
+    };
+    const wrapper = shallowMount(CompetitionInformation, {
+      localVue,
+      store,
+      mocks: {
+        $route
+      },
+      stubs: { "router-link": RouterLinkStub }
+    });
+    await flushPromises();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("show management options for area managers", async () => {
+    state = {
+      editMode: true,
+      user: {
+        is_authenticated: true,
+        is_staff: false,
+        is_superuser: false,
+        manager: [1]
+      }
     };
     store = new Vuex.Store({ state });
     const $route = {
@@ -50,7 +81,7 @@ describe("CompetitionInformation.vue", () => {
   });
 
   it("show management options for organization user", async () => {
-    state = { editMode: true, user: { is_authenticated: true } };
+    state = { editMode: true, user: { is_authenticated: true, manager: [] } };
     store = new Vuex.Store({ state });
     const $route = {
       params: { competition_id: 1 }
@@ -69,7 +100,7 @@ describe("CompetitionInformation.vue", () => {
   });
 
   it("swap visibility", async () => {
-    state = { user: { is_authenticated: true } };
+    state = { user: { is_authenticated: true, manager: [] } };
     store = new Vuex.Store({ state });
     const $route = {
       params: { competition_id: 1 }
@@ -89,7 +120,7 @@ describe("CompetitionInformation.vue", () => {
   });
 
   it("swap lock", async () => {
-    state = { user: { is_authenticated: true } };
+    state = { user: { is_authenticated: true, manager: [] } };
     store = new Vuex.Store({ state });
     const $route = {
       params: { competition_id: 1 }

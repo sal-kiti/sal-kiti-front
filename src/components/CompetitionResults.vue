@@ -17,9 +17,10 @@
         </b-button>
         <b-button
           v-if="
-            editPermission &&
             $store.state.editMode &&
-            $store.state.user.is_staff
+            ($store.state.user.is_staff ||
+              (competition.organization in $store.state.user.manager &&
+                !competition.locked))
           "
           variant="outline-success"
           v-on:click="approveAll()"
@@ -182,7 +183,9 @@
                 <b-button
                   v-if="
                     $store.state.editMode &&
-                    $store.state.user.is_staff &&
+                    ($store.state.user.is_staff ||
+                      (competition.organization in $store.state.user.manager &&
+                        !competition.locked)) &&
                     !data.item.approved
                   "
                   size="sm"
@@ -194,7 +197,9 @@
                 <b-button
                   v-if="
                     $store.state.editMode &&
-                    $store.state.user.is_staff &&
+                    ($store.state.user.is_staff ||
+                      (competition.organization in $store.state.user.manager &&
+                        !competition.locked)) &&
                     data.item.approved
                   "
                   size="sm"
@@ -521,7 +526,7 @@ export default {
         }
         content += "\r\n";
       }
-      var encodedContent = encodeURI(content);
+      let encodedContent = encodeURI(content);
       window.open(encodedContent);
     },
     /**
