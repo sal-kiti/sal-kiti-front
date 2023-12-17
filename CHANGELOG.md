@@ -1,4 +1,22 @@
 # Changelog
+## 1.3.0 - 2023-12-17
+Required backend version: 1.3+
+
+### Changes
+- Add support for competition calendar
+- Add support for area managers
+- Fix file upload when file type is unspecified
+- Improved competition type matching in Pelias import
+- Fix invalid numbers in position
+- Allow different team name separators
+- Allow setting historical records in UI
+- Add edit mode links to Django admin site
+- Fix foreign athlete organizations in Pelias import
+- Use first result by default when finding multiple external athletes
+- Add Finnish translations to SIUS import
+- Fix media result positions in practical
+- Update package versions
+
 ## 1.2.0 - 2022-07-09
 Required backend version: 1.2+
 
