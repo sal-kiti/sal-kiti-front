@@ -18,13 +18,19 @@ const competitions = {
       public: false,
       locked: false,
       approved: false,
+      trial: false,
       event: 1,
       event_info: {
         name: "EventName"
       },
       name: "Demo Competition",
       description: "EC on the Village Field",
-      competition: 1
+      competition: 1,
+      permissions: {
+        update: true,
+        write: true,
+        read: true
+      }
     },
     {
       id: 2,
@@ -44,11 +50,17 @@ const competitions = {
       public: true,
       locked: true,
       approved: true,
+      trial: true,
       event: 1,
       event_info: {
         name: "EventName"
       },
-      competition: 1
+      competition: 1,
+      permissions: {
+        update: false,
+        write: false,
+        read: false
+      }
     }
   ]
 };
@@ -82,6 +94,11 @@ const events = {
       public: false,
       locked: false,
       approved: false,
+      permissions: {
+        update: true,
+        write: true,
+        read: true
+      }
     },
     {
       id: 2,
@@ -100,6 +117,11 @@ const events = {
       public: true,
       locked: true,
       approved: true,
+      permissions: {
+        update: false,
+        write: false,
+        read: false
+      }
     }
   ]
 };
@@ -880,7 +902,7 @@ const error_message = {
 };
 
 const mock = jest.fn(
-  url =>
+  (url) =>
     new Promise((resolve, reject) => {
       let data = null;
       let data_id = null;
@@ -929,7 +951,7 @@ const mock = jest.fn(
         if (data_id == 99) {
           reject(error_message);
         }
-        temp_data = data.results.filter(obj => obj.id === data_id)[0];
+        temp_data = data.results.filter((obj) => obj.id === data_id)[0];
       }
       if (url.includes("=99")) {
         reject(error_message);
@@ -941,18 +963,18 @@ const mock = jest.fn(
           splitted[0] !== "recordlist" &&
           splitted[0] !== "resultlist"
         ) {
-          params.split("&").forEach(function(part) {
+          params.split("&").forEach(function (part) {
             let param = part.split("=");
             if (param[0] in data.results[0] && param[1].search(",") === -1) {
               if (temp_data) {
                 temp_data.results = temp_data.results.filter(
-                  obj => obj[param[0]].toString() === param[1].toString()
+                  (obj) => obj[param[0]].toString() === param[1].toString()
                 );
               } else {
                 temp_data = { results: [] };
                 if ("results" in data) {
                   temp_data.results = data.results.filter(
-                    obj => obj[param[0]].toString() === param[1].toString()
+                    (obj) => obj[param[0]].toString() === param[1].toString()
                   );
                 }
               }
@@ -999,7 +1021,7 @@ const axios = {
   patch: mock_modify,
   put: mock_modify,
   post: mock_modify,
-  create: jest.fn(function() {
+  create: jest.fn(function () {
     return this;
   }),
   interceptors: {
