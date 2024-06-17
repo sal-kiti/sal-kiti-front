@@ -51,6 +51,22 @@
           </dd>
         </dl>
       </b-col>
+      <b-col cols="6" md="3" v-if="licences.length">
+        <dl>
+          <dt>{{ $t("athlete.licences") }}</dt>
+          <dd v-for="info in licences" v-bind:key="info.id">
+            {{ info.value }}
+          </dd>
+        </dl>
+      </b-col>
+      <b-col cols="6" md="3" v-if="merits.length">
+        <dl>
+          <dt>{{ $t("athlete.merits") }}</dt>
+          <dd v-for="info in merits" v-bind:key="info.id">
+            {{ info.value }}
+          </dd>
+        </dl>
+      </b-col>
       <b-col
         cols="6"
         md="3"
@@ -93,6 +109,20 @@ export default {
       errors: {},
       loadingAthlete: true
     };
+  },
+  computed: {
+    licences: function () {
+      if (!this.athlete || !this.athlete.info) {
+        return [];
+      }
+      return this.athlete.info.filter((f) => f.type === "licence");
+    },
+    merits: function () {
+      if (!this.athlete || !this.athlete.info) {
+        return [];
+      }
+      return this.athlete.info.filter((f) => f.type === "merit");
+    }
   },
   mounted() {
     this.getAthlete(this.$route.params.athlete_id);

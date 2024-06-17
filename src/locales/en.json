@@ -37,7 +37,9 @@
     "error": "Could not load athlete information",
     "sport_id": "Sport ID",
     "club": "Club",
-    "import": "Athlete import"
+    "import": "Athlete import",
+    "licences": "Licences",
+    "merits": "Merits"
   },
   "event": {
     "event": "Event | Events",

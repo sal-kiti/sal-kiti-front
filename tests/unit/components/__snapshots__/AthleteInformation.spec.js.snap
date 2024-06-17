@@ -107,6 +107,26 @@ exports[`AthleteInformation.vue renders athlete information 1`] = `
       </dl>
     </b-col-stub>
      
+    <b-col-stub
+      cols="6"
+      md="3"
+      tag="div"
+    >
+      <dl>
+        <dt>
+          athlete.licences
+        </dt>
+         
+        <dd>
+          
+          Senior licence
+        
+        </dd>
+      </dl>
+    </b-col-stub>
+     
+    <!---->
+     
     <!---->
   </b-row-stub>
 </div>

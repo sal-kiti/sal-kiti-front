@@ -138,7 +138,16 @@ const athletes = {
       organization_info: {
         abbreviation: "LC",
         name: "Local Club"
-      }
+      },
+      info: [
+        {
+          id: 1,
+          athlete: 1,
+          type: "licence",
+          value: "Senior licence",
+          visibility: "P"
+        }
+      ]
     },
     {
       id: 2,

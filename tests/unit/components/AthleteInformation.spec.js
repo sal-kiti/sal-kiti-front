@@ -6,7 +6,10 @@ import Vuex from "vuex";
 
 const localVue = createLocalVue();
 localVue.use(BootstrapVue);
-const state = { editmode: false, user: { is_staff: false } };
+const state = {
+  editmode: false,
+  user: { is_authenticated: true, is_staff: false }
+};
 const store = new Vuex.Store({ state });
 
 describe("AthleteInformation.vue", () => {

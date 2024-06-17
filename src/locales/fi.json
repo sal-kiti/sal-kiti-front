@@ -36,7 +36,9 @@
     "error": "Virhe haettaessa urheilijan tietoja",
     "sport_id": "Sportti-ID",
     "club": "Seura",
-    "import": "Urheilijoiden tuonti"
+    "import": "Urheilijoiden tuonti",
+    "licences": "Lisenssit",
+    "merits": "Meriitit"
   },
   "event": {
     "event": "Tapahtuma | Tapahtumat",
