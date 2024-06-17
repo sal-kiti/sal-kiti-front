@@ -92,6 +92,8 @@ exports[`AthleteSearch.vue renders search form 1`] = `
           </option>
         </b-form-select-stub>
          
+        <!---->
+         
         <b-button-stub
           class="btn-orange space-right"
           tag="button"

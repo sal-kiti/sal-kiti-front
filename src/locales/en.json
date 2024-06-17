@@ -164,7 +164,9 @@
     "max_results": "Number of results",
     "result_greater": "Result greater or equal than",
     "result_less": "Result less or equal than",
-    "competition": "Search Competitions"
+    "competition": "Search Competitions",
+    "judge": "Judge",
+    "licenced": "Licenced"
   },
   "info": {
     "info": "Info",

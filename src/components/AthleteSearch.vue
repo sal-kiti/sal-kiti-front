@@ -34,6 +34,20 @@
               {{ i }}
             </option>
           </b-form-select>
+          <b-form-select
+            v-if="$store.state.user.is_authenticated"
+            class="search-field space-right"
+            v-model.lazy="form.info"
+            :aria-label="$t('search.info')"
+          >
+            <option
+              v-for="(key, value) in infoOptions"
+              :key="key"
+              :value="value"
+            >
+              {{ key }}
+            </option>
+          </b-form-select>
           <b-button
             type="submit"
             variant="light"
@@ -110,7 +124,13 @@ export default {
       errors: {},
       form: {
         search: "",
+        info: "",
         limit: 10
+      },
+      infoOptions: {
+        "": "",
+        merit: this.$t("search.judge"),
+        licence: this.$t("search.licenced")
       },
       loadingAthletes: false,
       results: [],
@@ -212,10 +232,16 @@ export default {
       if (evt) {
         evt.preventDefault();
       }
-      if (this.form.search) {
+      if (this.form.search || this.form.info) {
         let parameters = "?search=" + this.form.search;
+        if (this.form.info) {
+          parameters += "&info=" + this.form.info;
+        }
         let query = {};
         query.search = this.form.search;
+        if (this.form.info) {
+          query.info = this.form.info;
+        }
         if (this.form.limit) {
           parameters += "&limit=" + this.form.limit;
           query.limit = this.form.limit;

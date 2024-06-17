@@ -163,7 +163,9 @@
     "max_results": "Tulosten määrä",
     "result_greater": "Tulos suurempi tai yhtä suuri kuin",
     "result_less": "Tulos pienempi tai yhtä suuri kuin",
-    "competition": "Hae kilpailuita"
+    "competition": "Hae kilpailuita",
+    "judge": "Tuomari",
+    "licenced": "Lisenssoitu"
   },
   "info": {
     "info": "Info",
