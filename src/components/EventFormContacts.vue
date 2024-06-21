@@ -221,7 +221,7 @@ export default {
       return [
         { key: "contact", name: this.$t("contact.generic_contact") },
         { key: "manager", name: this.$t("contact.competition_manager") },
-        { key: "head judge", name: this.$t("contact.head_judge") },
+        { key: "chiefrange", name: this.$t("contact.chief_range_officer") },
         { key: "technical", name: this.$t("contact.technical_manager") }
       ];
     }
