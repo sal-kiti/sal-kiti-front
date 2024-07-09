@@ -94,6 +94,12 @@ export default {
           text: this.$t("info.athlete_check_description"),
           button: this.$t("info.to_athlete_check"),
           link: "athlete-check"
+        },
+        {
+          title: this.$tc("info.judge", 2),
+          text: this.$t("info.judge_description"),
+          button: this.$t("info.to_judge"),
+          link: "info-judge"
         }
       ];
     },

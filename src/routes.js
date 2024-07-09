@@ -122,6 +122,12 @@ export default [
       import(/* webpackChunkName: "info" */ "./views/InfoCompetitionType.vue")
   },
   {
+    path: "/info/judge/",
+    name: "info-judge",
+    component: () =>
+      import(/* webpackChunkName: "info" */ "./views/InfoJudge.vue")
+  },
+  {
     path: "/info/organization/",
     name: "info-organization",
     component: () =>

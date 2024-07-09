@@ -186,6 +186,11 @@
     "athlete_check": "Urheilijoiden tietojen tarkistus",
     "athlete_check_description": "Tarkista urheilijoiden lisenssitiedot, nimet ym.",
     "to_athlete_check": "Tarkista lisenssejä",
+    "judge": "Tuomari | Tuomarit",
+    "judge_description": "Listaa tuomarit lajeittain",
+    "to_judge": "Tuomarilistaan",
+    "judge_lists": "Tuomarilista",
+    "merit": "Meriitti | Meriitit",
     "layout": "Asettelu"
   },
   "sport": {

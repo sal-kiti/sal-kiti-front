@@ -187,6 +187,11 @@
     "athlete_check": "Athlete information check",
     "athlete_check_description": "Check licences, names etc. from athletes",
     "to_athlete_check": "Check licences",
+    "judge": "Judge | Judges",
+    "judge_description": "List judge merits by sport",
+    "to_judge": "List judges",
+    "judge_lists": "Judge lists",
+    "merit": "Merit | Merits",
     "layout": "Layout"
   },
   "sport": {
