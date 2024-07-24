@@ -1,0 +1,608 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventFormContacts.vue renders event contacts with form 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <h3
+        class="bg-sal-orange"
+      >
+        contact.contact
+      </h3>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <p>
+        contact.contact_info
+      </p>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        <table
+          aria-busy="false"
+          aria-colcount="5"
+          class="table b-table table-hover table-sm"
+          id="__BVID__22"
+          role="table"
+        >
+          <!---->
+          <!---->
+          <thead
+            class=""
+            role="rowgroup"
+          >
+            <!---->
+            <tr
+              class=""
+              role="row"
+            >
+              <th
+                aria-colindex="1"
+                aria-sort="ascending"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <div>
+                  contact.type
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to sort descending)
+                </span>
+              </th>
+              <th
+                aria-colindex="2"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+              >
+                <div>
+                  name
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to clear sorting)
+                </span>
+              </th>
+              <th
+                aria-colindex="3"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+              >
+                <div>
+                  contact.contact
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to clear sorting)
+                </span>
+              </th>
+              <th
+                aria-colindex="4"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+              >
+                <div>
+                  info.merit
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to clear sorting)
+                </span>
+              </th>
+              <th
+                aria-colindex="5"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+              >
+                <div>
+                  remove
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to clear sorting)
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <!---->
+            <tr
+              class=""
+              role="row"
+              tabindex="0"
+            >
+              <td
+                aria-colindex="1"
+                class=""
+                role="cell"
+              >
+                
+            contact.chief_range_officer
+          
+              </td>
+              <td
+                aria-colindex="2"
+                class=""
+                role="cell"
+              >
+                
+            Test Judge
+            
+                <div>
+                  
+              athlete.sport_id:
+              3456789
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="3"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              judge@example.org
+            
+                </div>
+                 
+                <div>
+                  
+              +1234567890
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="4"
+                class=""
+                role="cell"
+              >
+                <div>
+                  <div>
+                    <div>
+                      
+                  Level II judge
+                
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td
+                aria-colindex="5"
+                class=""
+                role="cell"
+              >
+                <div>
+                  <button
+                    class="btn btn-danger btn-secondary"
+                    type="button"
+                  >
+                    
+                remove
+              
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class=""
+              role="row"
+              tabindex="0"
+            >
+              <td
+                aria-colindex="1"
+                class=""
+                role="cell"
+              >
+                
+            contact.competition_manager
+          
+              </td>
+              <td
+                aria-colindex="2"
+                class=""
+                role="cell"
+              >
+                
+            Mana Ger
+            
+                <!---->
+              </td>
+              <td
+                aria-colindex="3"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              manager@example.org
+            
+                </div>
+                 
+                <!---->
+              </td>
+              <td
+                aria-colindex="4"
+                class=""
+                role="cell"
+              />
+              <td
+                aria-colindex="5"
+                class=""
+                role="cell"
+              >
+                <div>
+                  <button
+                    class="btn btn-danger btn-secondary"
+                    type="button"
+                  >
+                    
+                remove
+              
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <!---->
+            <!---->
+          </tbody>
+          <!---->
+        </table>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <h4
+        class="bg-sal-orange"
+      >
+        contact.add
+      </h4>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <form
+        class="form-inline"
+      >
+        <input
+          aria-label="search.placeholder_athlete"
+          class="search-field space-right space-down form-control"
+          id="__BVID__7"
+          placeholder="search.placeholder_athlete"
+          type="text"
+        />
+         
+        <select
+          aria-label="sport.sport"
+          class="search-field space-right space-down custom-select"
+          id="__BVID__8"
+        >
+          <option
+            value=""
+          />
+           
+          <option
+            value="1"
+          >
+            
+            Paintball
+          
+          </option>
+        </select>
+         
+        <button
+          class="btn btn-orange space-right space-down btn-light"
+          type="submit"
+        >
+          search.search
+        </button>
+      </form>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <p>
+        contact.search_info
+      </p>
+    </div>
+  </div>
+   
+  <!---->
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <h5
+        class="bg-sal-orange"
+      >
+        contact.details
+      </h5>
+    </div>
+  </div>
+   
+  <form
+    class=""
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col"
+      >
+        <div
+          class="form-group"
+          id="contact-add-type"
+          role="group"
+        >
+          <label
+            class="d-block"
+            for="input-type"
+            id="contact-add-type__BV_label_"
+          >
+            contact.type
+          </label>
+          <div>
+            <select
+              aria-required="true"
+              class="custom-select"
+              id="input-type"
+              required="required"
+            >
+              <option
+                value="contact"
+              >
+                contact.generic_contact
+              </option>
+              <option
+                value="manager"
+              >
+                contact.competition_manager
+              </option>
+              <option
+                value="chiefrange"
+              >
+                contact.chief_range_officer
+              </option>
+              <option
+                value="technical"
+              >
+                contact.technical_manager
+              </option>
+            </select>
+             
+            <div
+              class="d-block invalid-feedback"
+            >
+              <ul />
+            </div>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+          hidden="hidden"
+          id="contact-add-sport_id"
+          role="group"
+        >
+          <label
+            class="d-block"
+            for="input-ct-sport_id"
+            id="contact-add-sport_id__BV_label_"
+          >
+            athlete.sport_id
+          </label>
+          <div>
+            <input
+              aria-required="true"
+              class="form-control"
+              id="input-ct-sport_id"
+              required="required"
+              type="text"
+            />
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+          id="contact-add-first-name"
+          role="group"
+        >
+          <label
+            class="d-block"
+            for="input-ct-first_name"
+            id="contact-add-first-name__BV_label_"
+          >
+            contact.first_name
+          </label>
+          <div>
+            <input
+              aria-required="true"
+              class="form-control"
+              id="input-ct-first_name"
+              required="required"
+              type="text"
+            />
+             
+            <div
+              class="d-block invalid-feedback"
+            >
+              <ul />
+            </div>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+          id="contact-add-last-name"
+          role="group"
+        >
+          <label
+            class="d-block"
+            for="input-ct-last_name"
+            id="contact-add-last-name__BV_label_"
+          >
+            contact.last_name
+          </label>
+          <div>
+            <input
+              aria-required="true"
+              class="form-control"
+              id="input-ct-last_name"
+              required="required"
+              type="text"
+            />
+             
+            <div
+              class="d-block invalid-feedback"
+            >
+              <ul />
+            </div>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+          id="contact-add-email"
+          role="group"
+        >
+          <label
+            class="d-block"
+            for="input-ct-email"
+            id="contact-add-email__BV_label_"
+          >
+            contact.email
+          </label>
+          <div>
+            <input
+              class="form-control"
+              id="input-ct-email"
+              type="text"
+            />
+             
+            <div
+              class="d-block invalid-feedback"
+            >
+              <ul />
+            </div>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="form-group"
+          id="contact-add-phone"
+          role="group"
+        >
+          <label
+            class="d-block"
+            for="input-ct-phone"
+            id="contact-add-phone__BV_label_"
+          >
+            contact.phone
+          </label>
+          <div>
+            <input
+              class="form-control"
+              id="input-ct-phone"
+              type="text"
+            />
+             
+            <div
+              class="d-block invalid-feedback"
+            >
+              <ul />
+            </div>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </div>
+         
+        <div>
+          <button
+            class="btn btn-orange space-right mb-5 btn-light"
+            type="submit"
+          >
+            
+            create
+          
+          </button>
+           
+          <a
+            class="btn btn-orange float-right btn-light"
+            href="#"
+            target="_self"
+          >
+            
+            event.continue_to_competitions
+          
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

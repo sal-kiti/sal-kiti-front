@@ -126,6 +126,50 @@ const events = {
   ]
 };
 
+const eventcontacts = {
+  results: [
+    {
+      id: 1,
+      event: 1,
+      type: "chiefrange",
+      athlete: 2,
+      athlete_info: {
+        id: 1,
+        sport_id: 3456789,
+        organization: 1,
+        organization_info: {
+          abbreviation: "LC",
+          name: "Local Club"
+        },
+        info: [
+          {
+            id: 1,
+            athlete: 1,
+            type: "merit",
+            value: "Level II judge",
+            visibility: "P"
+          }
+        ]
+      },
+      first_name: "Test",
+      last_name: "Judge",
+      email: "judge@example.org",
+      phone: "+1234567890"
+    },
+    {
+      id: 2,
+      event: 1,
+      type: "manager",
+      athlete: null,
+      athlete_info: null,
+      first_name: "Mana",
+      last_name: "Ger",
+      email: "manager@example.org",
+      phone: ""
+    }
+  ]
+};
+
 const athletes = {
   results: [
     {
@@ -917,6 +961,8 @@ const mock = jest.fn(
       let data_id = null;
       if (url.startsWith("events/")) {
         data = events;
+      } else if (url.startsWith("eventcontacts/")) {
+        data = eventcontacts;
       } else if (url.startsWith("competitions/")) {
         data = competitions;
       } else if (url.startsWith("athletes/")) {

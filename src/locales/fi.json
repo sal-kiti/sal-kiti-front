@@ -78,7 +78,9 @@
     "first_name": "Etunimi",
     "last_name": "Sukunimi",
     "email": "Sähköpostiosoite",
-    "phone": "Puhelinnumero"
+    "phone": "Puhelinnumero",
+    "search_info":  "Etsi nimellä tai Sportti ID:llä urheilijoita tai tietyn lajin tuomareita. Klikkaa tulosta valitaksesi kontaktiksi lisättävän henkilön.",
+    "details": "Tiedot"
   },
   "competition": {
     "competition": "Kilpailu | Kilpailut",
