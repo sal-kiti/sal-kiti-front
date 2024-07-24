@@ -254,6 +254,13 @@
               {{ $t("create") }}
             </b-button>
             <b-button
+              variant="light"
+              class="btn-orange space-right mb-5"
+              v-on:click="resetFields()"
+            >
+              {{ $t("clear") }}
+            </b-button>
+            <b-button
               :to="{
                 name: 'event',
                 params: {

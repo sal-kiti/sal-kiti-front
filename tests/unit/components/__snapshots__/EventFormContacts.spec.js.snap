@@ -591,6 +591,15 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
           
           </button>
            
+          <button
+            class="btn btn-orange space-right mb-5 btn-light"
+            type="button"
+          >
+            
+            clear
+          
+          </button>
+           
           <a
             class="btn btn-orange float-right btn-light"
             href="#"
