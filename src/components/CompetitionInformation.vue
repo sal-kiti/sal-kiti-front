@@ -130,11 +130,11 @@
             {{ $t("yes") }}
             <b-button
               size="sm"
-              variant="outline-success"
+              variant="outline-danger"
               v-on:click="toggleApprovedStatus()"
               v-if="$store.state.editMode"
             >
-              {{ $t("change") }}
+              {{ $t("competition.cancel_approval") }}
             </b-button>
           </dd>
           <dd v-if="!competition.approved">
@@ -142,10 +142,10 @@
             <b-button
               v-if="$store.state.editMode"
               size="sm"
-              variant="outline-danger"
+              variant="outline-success"
               v-on:click="toggleApprovedStatus()"
             >
-              {{ $t("change") }}
+              {{ $t("competition.approve") }}
             </b-button>
           </dd>
         </dl>

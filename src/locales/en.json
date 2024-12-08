@@ -61,11 +61,12 @@
     "notes_help": "Other notes. Only visible for the organizers and SAL staff.",
     "past": "Past",
     "future": "Future",
-    "applied": "Applied",
+    "applied": "Show applied events",
     "approved": "Approved",
     "move_to_contacts": "Save and continue to add contacts",
     "return": "Event page",
-    "continue_to_competitions": "Continue to add competitions to the event"
+    "continue_to_competitions": "Continue to add competitions to the event",
+    "include_competitions": "include competitions"
   },
   "contact": {
     "contact": "Contact | Contacts",
@@ -101,6 +102,8 @@
     "publish": "Publish",
     "hide": "Hide",
     "hidden": "Hidden",
+    "approve": "Approve",
+    "cancel_approval": "Cancel approval",
     "public": "Public",
     "approved": "Approved",
     "trial": "Trial competition",

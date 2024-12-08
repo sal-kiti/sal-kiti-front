@@ -429,20 +429,7 @@ exports[`EventInformation.vue show management options for staff 1`] = `
       </dl>
     </b-col-stub>
      
-    <b-col-stub
-      cols="12"
-      tag="div"
-    >
-      <dl>
-        <dt>
-          event.categories
-        </dt>
-         
-        <dd>
-          
-        </dd>
-      </dl>
-    </b-col-stub>
+    <!---->
      
     <b-col-stub
       cols="12"
@@ -476,14 +463,29 @@ exports[`EventInformation.vue show management options for staff 1`] = `
           competition.unlocked
           
           <b-button-stub
+            class="m-1"
             size="sm"
             tag="button"
             target="_self"
             type="button"
-            variant="outline-danger"
+            variant="outline-success"
           >
             
             competition.lock
+          
+          </b-button-stub>
+           
+          <b-button-stub
+            class="m-1"
+            size="sm"
+            tag="button"
+            target="_self"
+            type="button"
+            variant="outline-success"
+          >
+            
+            competition.lock
+            (event.include_competitions)
           
           </b-button-stub>
         </dd>
@@ -507,14 +509,29 @@ exports[`EventInformation.vue show management options for staff 1`] = `
           no
           
           <b-button-stub
+            class="m-1"
             size="sm"
             tag="button"
             target="_self"
             type="button"
-            variant="outline-danger"
+            variant="outline-success"
           >
             
-            change
+            competition.approve
+          
+          </b-button-stub>
+           
+          <b-button-stub
+            class="m-1"
+            size="sm"
+            tag="button"
+            target="_self"
+            type="button"
+            variant="outline-success"
+          >
+            
+            competition.approve
+            (event.include_competitions)
           
           </b-button-stub>
         </dd>
@@ -538,14 +555,29 @@ exports[`EventInformation.vue show management options for staff 1`] = `
           competition.hidden
           
           <b-button-stub
+            class="m-1"
             size="sm"
             tag="button"
             target="_self"
             type="button"
-            variant="outline-danger"
+            variant="outline-success"
           >
             
             competition.publish
+          
+          </b-button-stub>
+           
+          <b-button-stub
+            class="m-1"
+            size="sm"
+            tag="button"
+            target="_self"
+            type="button"
+            variant="outline-success"
+          >
+            
+            competition.publish
+            (event.include_competitions)
           
           </b-button-stub>
         </dd>

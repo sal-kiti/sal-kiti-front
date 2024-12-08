@@ -681,10 +681,10 @@ exports[`CompetitionInformation.vue show management options for staff 1`] = `
             tag="button"
             target="_self"
             type="button"
-            variant="outline-danger"
+            variant="outline-success"
           >
             
-            change
+            competition.approve
           
           </b-button-stub>
         </dd>

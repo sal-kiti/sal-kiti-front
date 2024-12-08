@@ -95,13 +95,7 @@
           </dd>
         </dl>
       </b-col>
-      <b-col
-        cols="12"
-        v-if="
-          $store.state.user.is_staff ||
-          event.organization in $store.state.user.manager
-        "
-      >
+      <b-col cols="12" v-if="event.categories">
         <dl>
           <dt>{{ $t("event.categories") }}</dt>
           <dd>{{ event.categories }}</dd>
@@ -132,23 +126,45 @@
           <dd v-if="event.locked">
             {{ $t("competition.locked") }}
             <b-button
-              size="sm"
-              variant="outline-success"
-              v-on:click="toggleLockStatus()"
-              v-if="$store.state.editMode"
-            >
-              {{ $t("competition.unlock") }}
-            </b-button>
-          </dd>
-          <dd v-if="!event.locked">
-            {{ $t("competition.unlocked") }}
-            <b-button
+              class="m-1"
               size="sm"
               variant="outline-danger"
               v-on:click="toggleLockStatus()"
               v-if="$store.state.editMode"
             >
+              {{ $t("competition.unlock") }}
+            </b-button>
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-danger"
+              v-on:click="toggleLockStatus({ competitions: true })"
+              v-if="$store.state.editMode"
+            >
+              {{ $t("competition.unlock") }}
+              ({{ $t("event.include_competitions") }})
+            </b-button>
+          </dd>
+          <dd v-if="!event.locked">
+            {{ $t("competition.unlocked") }}
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-success"
+              v-on:click="toggleLockStatus()"
+              v-if="$store.state.editMode"
+            >
               {{ $t("competition.lock") }}
+            </b-button>
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-success"
+              v-on:click="toggleLockStatus({ competitions: true })"
+              v-if="$store.state.editMode"
+            >
+              {{ $t("competition.lock") }}
+              ({{ $t("event.include_competitions") }})
             </b-button>
           </dd>
         </dl>
@@ -166,23 +182,45 @@
           <dd v-if="event.approved">
             {{ $t("yes") }}
             <b-button
-              size="sm"
-              variant="outline-success"
-              v-on:click="toggleApprovedStatus()"
-              v-if="$store.state.editMode"
-            >
-              {{ $t("change") }}
-            </b-button>
-          </dd>
-          <dd v-if="!event.approved">
-            {{ $t("no") }}
-            <b-button
+              class="m-1"
               size="sm"
               variant="outline-danger"
               v-on:click="toggleApprovedStatus()"
               v-if="$store.state.editMode"
             >
-              {{ $t("change") }}
+              {{ $t("competition.cancel_approval") }}
+            </b-button>
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-danger"
+              v-on:click="toggleApprovedStatus({ competitions: true })"
+              v-if="$store.state.editMode"
+            >
+              {{ $t("competition.cancel_approval") }}
+              ({{ $t("event.include_competitions") }})
+            </b-button>
+          </dd>
+          <dd v-if="!event.approved">
+            {{ $t("no") }}
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-success"
+              v-on:click="toggleApprovedStatus()"
+              v-if="$store.state.editMode"
+            >
+              {{ $t("competition.approve") }}
+            </b-button>
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-success"
+              v-on:click="toggleApprovedStatus({ competitions: true })"
+              v-if="$store.state.editMode"
+            >
+              {{ $t("competition.approve") }}
+              ({{ $t("event.include_competitions") }})
             </b-button>
           </dd>
         </dl>
@@ -200,23 +238,45 @@
           <dd v-if="event.public">
             {{ $t("competition.public") }}
             <b-button
-              size="sm"
-              variant="outline-success"
-              v-on:click="togglePublicStatus()"
-              v-if="$store.state.editMode"
-            >
-              {{ $t("competition.hide") }}
-            </b-button>
-          </dd>
-          <dd v-if="!event.public">
-            {{ $t("competition.hidden") }}
-            <b-button
+              class="m-1"
               size="sm"
               variant="outline-danger"
               v-on:click="togglePublicStatus()"
               v-if="$store.state.editMode"
             >
+              {{ $t("competition.hide") }}
+            </b-button>
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-danger"
+              v-on:click="togglePublicStatus({ competitions: true })"
+              v-if="$store.state.editMode"
+            >
+              {{ $t("competition.hide") }}
+              ({{ $t("event.include_competitions") }})
+            </b-button>
+          </dd>
+          <dd v-if="!event.public">
+            {{ $t("competition.hidden") }}
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-success"
+              v-on:click="togglePublicStatus()"
+              v-if="$store.state.editMode"
+            >
               {{ $t("competition.publish") }}
+            </b-button>
+            <b-button
+              class="m-1"
+              size="sm"
+              variant="outline-success"
+              v-on:click="togglePublicStatus({ competitions: true })"
+              v-if="$store.state.editMode"
+            >
+              {{ $t("competition.publish") }}
+              ({{ $t("event.include_competitions") }})
             </b-button>
           </dd>
         </dl>
@@ -310,11 +370,11 @@ export default {
      *
      * @returns {Promise<void>}
      */
-    toggleApprovedStatus: async function () {
+    toggleApprovedStatus: async function (competitions = false) {
       this.$set(this.errors, "main", null);
       await HTTP.patch(
         "events/" + this.event.id + "/",
-        { approved: !this.event.approved },
+        { approved: !this.event.approved, include_competitions: competitions },
         this.config
       )
         .then((response) => {
@@ -329,11 +389,11 @@ export default {
      *
      * @returns {Promise<void>}
      */
-    toggleLockStatus: async function () {
+    toggleLockStatus: async function (competitions = false) {
       this.$set(this.errors, "main", null);
       await HTTP.patch(
         "events/" + this.event.id + "/",
-        { locked: !this.event.locked },
+        { locked: !this.event.locked, include_competitions: competitions },
         this.config
       )
         .then((response) => {
@@ -348,11 +408,11 @@ export default {
      *
      * @returns {Promise<void>}
      */
-    togglePublicStatus: async function () {
+    togglePublicStatus: async function (competitions = false) {
       this.$set(this.errors, "main", null);
       await HTTP.patch(
         "events/" + this.event.id + "/",
-        { public: !this.event.public },
+        { public: !this.event.public, include_competitions: competitions },
         this.config
       )
         .then((response) => {
