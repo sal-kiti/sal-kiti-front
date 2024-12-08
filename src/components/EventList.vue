@@ -293,7 +293,6 @@ export default {
     selectListed(item) {
       if (item === "future") {
         this.listFuture = !this.listFuture;
-        this.includeApplied = false;
       }
       if (item === "applied") {
         this.includeApplied = !this.includeApplied;
