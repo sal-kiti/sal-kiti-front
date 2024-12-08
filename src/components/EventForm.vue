@@ -251,7 +251,7 @@
         </b-form>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row ref="eventContacts">
       <b-col>
         <EventFormContacts v-if="eventId" :eventId="eventId" :edit="true" />
       </b-col>
@@ -311,6 +311,11 @@ export default {
       this.getEvent(this.$route.params.event_id);
       this.eventId = parseInt(this.$route.params.event_id);
     }
+    if (this.$route.query && this.$route.query.newEvent) {
+      setTimeout(() => {
+        this.$refs["eventContacts"].scrollIntoView();
+      }, 500);
+    }
   },
   methods: {
     /**
@@ -338,7 +343,8 @@ export default {
         .then((response) => {
           this.$router.push({
             name: "event-update",
-            params: { event_id: response.data.id.toString() }
+            params: { event_id: response.data.id.toString() },
+            query: { newEvent: true }
           });
         })
         .catch((error) => {

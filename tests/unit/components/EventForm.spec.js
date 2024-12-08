@@ -53,7 +53,8 @@ describe("EventForm.vue", () => {
     await wrapper.vm.postEvent();
     expect($router.push).toHaveBeenCalledWith({
       name: "event-update",
-      params: { event_id: "5" }
+      params: { event_id: "5" },
+      query: { newEvent: true }
     });
   });
 
