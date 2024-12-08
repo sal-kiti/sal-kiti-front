@@ -420,7 +420,7 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
                 contact.technical_manager
               </option>
               <option
-                value="officer"
+                value="range"
               >
                 contact.range_officer
               </option>

@@ -296,9 +296,11 @@
 import { HTTP } from "../api/BaseApi.js";
 import getCookie from "../utils/GetCookie";
 import errorParser from "../utils/ErrorParser";
+import contactType from "../mixins/ContactType";
 
 export default {
   name: "EventFormContacts",
+  mixins: [contactType],
   props: {
     eventId: Number,
     edit: {
@@ -371,15 +373,6 @@ export default {
         fields.push({ key: "remove", label: this.$t("remove") });
       }
       return fields;
-    },
-    contactTypes: function () {
-      return [
-        { key: "contact", name: this.$t("contact.generic_contact") },
-        { key: "manager", name: this.$t("contact.competition_manager") },
-        { key: "chiefrange", name: this.$t("contact.chief_range_officer") },
-        { key: "technical", name: this.$t("contact.technical_manager") },
-        { key: "officer", name: this.$t("contact.range_officer") }
-      ];
     }
   },
   watch: {
@@ -456,20 +449,6 @@ export default {
         .catch((error) => {
           this.$set(this.errors, "main", errorParser.generic.bind(this)(error));
         });
-    },
-    /**
-     * Returns a translated contact type name
-     *
-     * @param {string} key
-     * @returns {string} name, or key if key not found
-     */
-    getContactType(key) {
-      let contactType = this.contactTypes.filter((ct) => ct.key === key);
-      if (contactType.length === 1) {
-        return contactType[0].name;
-      } else {
-        return key;
-      }
     },
     /**
      * Fetch sports list from API
