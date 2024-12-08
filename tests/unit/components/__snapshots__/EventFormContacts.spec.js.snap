@@ -379,7 +379,8 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
         class="col"
       >
         <div
-          class="form-group"
+          aria-invalid="true"
+          class="form-group is-invalid"
           id="contact-add-type"
           role="group"
         >
@@ -392,6 +393,7 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
           </label>
           <div>
             <select
+              aria-describedby="contact-add-type__BV_feedback_invalid_"
               aria-required="true"
               class="custom-select"
               id="input-type"
@@ -417,6 +419,11 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
               >
                 contact.technical_manager
               </option>
+              <option
+                value="officer"
+              >
+                contact.range_officer
+              </option>
             </select>
              
             <div
@@ -424,7 +431,15 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
             >
               <ul />
             </div>
-            <!---->
+            <div
+              aria-atomic="true"
+              aria-live="assertive"
+              class="d-block invalid-feedback"
+              id="contact-add-type__BV_feedback_invalid_"
+              tabindex="-1"
+            >
+              required
+            </div>
             <!---->
             <!---->
           </div>
@@ -458,7 +473,8 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
         </div>
          
         <div
-          class="form-group"
+          aria-invalid="true"
+          class="form-group is-invalid"
           id="contact-add-first-name"
           role="group"
         >
@@ -471,6 +487,7 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
           </label>
           <div>
             <input
+              aria-describedby="contact-add-first-name__BV_feedback_invalid_"
               aria-required="true"
               class="form-control"
               id="input-ct-first_name"
@@ -483,14 +500,23 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
             >
               <ul />
             </div>
-            <!---->
+            <div
+              aria-atomic="true"
+              aria-live="assertive"
+              class="d-block invalid-feedback"
+              id="contact-add-first-name__BV_feedback_invalid_"
+              tabindex="-1"
+            >
+              required
+            </div>
             <!---->
             <!---->
           </div>
         </div>
          
         <div
-          class="form-group"
+          aria-invalid="true"
+          class="form-group is-invalid"
           id="contact-add-last-name"
           role="group"
         >
@@ -503,6 +529,7 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
           </label>
           <div>
             <input
+              aria-describedby="contact-add-last-name__BV_feedback_invalid_"
               aria-required="true"
               class="form-control"
               id="input-ct-last_name"
@@ -515,7 +542,15 @@ exports[`EventFormContacts.vue renders event contacts with form 1`] = `
             >
               <ul />
             </div>
-            <!---->
+            <div
+              aria-atomic="true"
+              aria-live="assertive"
+              class="d-block invalid-feedback"
+              id="contact-add-last-name__BV_feedback_invalid_"
+              tabindex="-1"
+            >
+              required
+            </div>
             <!---->
             <!---->
           </div>

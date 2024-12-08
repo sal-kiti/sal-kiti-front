@@ -152,6 +152,8 @@
             :id="'contact-add-type'"
             :label="$t('contact.type')"
             label-for="input-type"
+            :invalid-feedback="$t('required')"
+            :state="addContact.type != null"
           >
             <b-form-select
               id="input-type"
@@ -184,6 +186,10 @@
             :id="'contact-add-first-name'"
             :label="$t('contact.first_name')"
             label-for="input-ct-first_name"
+            :invalid-feedback="$t('required')"
+            :state="
+              addContact.first_name != null && addContact.first_name.length > 0
+            "
           >
             <b-form-input
               id="input-ct-first_name"
@@ -201,6 +207,10 @@
             :id="'contact-add-last-name'"
             :label="$t('contact.last_name')"
             label-for="input-ct-last_name"
+            :invalid-feedback="$t('required')"
+            :state="
+              addContact.last_name != null && addContact.last_name.length > 0
+            "
           >
             <b-form-input
               id="input-ct-last_name"
@@ -367,7 +377,8 @@ export default {
         { key: "contact", name: this.$t("contact.generic_contact") },
         { key: "manager", name: this.$t("contact.competition_manager") },
         { key: "chiefrange", name: this.$t("contact.chief_range_officer") },
-        { key: "technical", name: this.$t("contact.technical_manager") }
+        { key: "technical", name: this.$t("contact.technical_manager") },
+        { key: "officer", name: this.$t("contact.range_officer") }
       ];
     }
   },

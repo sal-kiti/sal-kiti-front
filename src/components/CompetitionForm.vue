@@ -22,6 +22,8 @@
             id="input-group-name"
             :label="$t('name')"
             label-for="input-name"
+            :invalid-feedback="$t('required')"
+            :state="form.name != null && form.name.length > 0"
           >
             <b-form-input
               id="input-name"
@@ -55,6 +57,8 @@
             id="input-group-location"
             :label="$t('location')"
             label-for="input-location"
+            :invalid-feedback="$t('required')"
+            :state="form.location != null && form.location.length > 0"
           >
             <b-form-input
               id="input-location"
@@ -71,6 +75,8 @@
             id="input-group-date-start"
             :label="$t('date_start')"
             label-for="input-date-start"
+            :invalid-feedback="$t('required')"
+            :state="form.date_start != null && form.date_start.length > 0"
           >
             <b-form-input
               id="input-date-start"
@@ -88,6 +94,8 @@
             id="input-group-date-end"
             :label="$t('date_end')"
             label-for="input-date-end"
+            :invalid-feedback="$t('required')"
+            :state="form.date_end != null && form.date_end.length > 0"
           >
             <b-form-input
               id="date-end"
@@ -105,6 +113,8 @@
             id="input-group-organization"
             :label="$t('organizer')"
             label-for="input-organization"
+            :invalid-feedback="$t('required')"
+            :state="form.organization != null"
           >
             <b-form-select
               id="input-organization"
@@ -125,6 +135,8 @@
             id="input-group-sports"
             label-for="input-sports"
             :label="$t('statistics.choose_sport')"
+            :invalid-feedback="$t('required')"
+            :state="sport != null"
           >
             <b-form-select
               id="input-sports"
@@ -133,6 +145,7 @@
               textField="name"
               valueField="id"
               v-on:change="selectSport"
+              required
             >
             </b-form-select>
           </b-form-group>
@@ -140,6 +153,8 @@
             id="input-group-competition-types"
             :label="$t('competition.type')"
             label-for="input-competition-types"
+            :invalid-feedback="$t('required')"
+            :state="form.type != null"
           >
             <b-form-select
               id="input-competition-types"
@@ -160,6 +175,8 @@
             id="input-group-competition-levels"
             :label="$t('competition.level')"
             label-for="input-competition-levels"
+            :invalid-feedback="$t('required')"
+            :state="form.level != null"
           >
             <b-form-select
               id="input-competition-levels"

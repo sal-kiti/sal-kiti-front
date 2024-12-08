@@ -52,6 +52,7 @@ exports[`EventForm.vue renders event form with even information 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-organization"
+          invalidfeedback="required"
           label="organizer"
           labelfor="input-organization"
         >
@@ -78,6 +79,7 @@ exports[`EventForm.vue renders event form with even information 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-name"
+          invalidfeedback="required"
           label="name"
           labelfor="input-name"
         >
@@ -123,6 +125,7 @@ exports[`EventForm.vue renders event form with even information 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-location"
+          invalidfeedback="required"
           label="location"
           labelfor="input-location"
         >
@@ -144,6 +147,7 @@ exports[`EventForm.vue renders event form with even information 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-date-start"
+          invalidfeedback="required"
           label="date_start"
           labelfor="input-date-start"
         >
@@ -165,6 +169,7 @@ exports[`EventForm.vue renders event form with even information 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-date-end"
+          invalidfeedback="required"
           label="date_end"
           labelfor="input-date-end"
         >

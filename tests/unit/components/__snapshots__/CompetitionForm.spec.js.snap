@@ -36,6 +36,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-name"
+          invalidfeedback="required"
           label="name"
           labelfor="input-name"
         >
@@ -81,6 +82,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-location"
+          invalidfeedback="required"
           label="location"
           labelfor="input-location"
         >
@@ -103,6 +105,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-date-start"
+          invalidfeedback="required"
           label="date_start"
           labelfor="input-date-start"
         >
@@ -125,6 +128,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-date-end"
+          invalidfeedback="required"
           label="date_end"
           labelfor="input-date-end"
         >
@@ -147,6 +151,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-organization"
+          invalidfeedback="required"
           label="organizer"
           labelfor="input-organization"
         >
@@ -173,6 +178,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-sports"
+          invalidfeedback="required"
           label="statistics.choose_sport"
           labelfor="input-sports"
         >
@@ -183,6 +189,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
             labelfield="label"
             options="[object Object]"
             optionsfield="options"
+            required="true"
             selectsize="0"
             textfield="name"
             valuefield="id"
@@ -192,6 +199,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-competition-types"
+          invalidfeedback="required"
           label="competition.type"
           labelfor="input-competition-types"
         >
@@ -218,6 +226,7 @@ exports[`CompetitionForm.vue renders competition form 1`] = `
         <b-form-group-stub
           feedbackarialive="assertive"
           id="input-group-competition-levels"
+          invalidfeedback="required"
           label="competition.level"
           labelfor="input-competition-levels"
         >

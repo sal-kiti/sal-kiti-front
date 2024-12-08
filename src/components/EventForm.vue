@@ -47,6 +47,8 @@
             id="input-group-organization"
             :label="$t('organizer')"
             label-for="input-organization"
+            :invalid-feedback="$t('required')"
+            :state="event.organization != null"
           >
             <b-form-select
               id="input-organization"
@@ -67,6 +69,8 @@
             id="input-group-name"
             :label="$t('name')"
             label-for="input-name"
+            :invalid-feedback="$t('required')"
+            :state="event.name != null && event.name.length > 0"
           >
             <b-form-input
               id="input-name"
@@ -101,6 +105,8 @@
             id="input-group-location"
             :label="$t('location')"
             label-for="input-location"
+            :invalid-feedback="$t('required')"
+            :state="event.location != null && event.location.length > 0"
           >
             <b-form-input
               id="input-location"
@@ -117,6 +123,8 @@
             id="input-group-date-start"
             :label="$t('date_start')"
             label-for="input-date-start"
+            :invalid-feedback="$t('required')"
+            :state="event.date_start != null && event.date_start.length > 0"
           >
             <b-form-input
               id="input-date-start"
@@ -134,6 +142,8 @@
             id="input-group-date-end"
             :label="$t('date_end')"
             label-for="input-date-end"
+            :invalid-feedback="$t('required')"
+            :state="event.date_end != null && event.date_end.length > 0"
           >
             <b-form-input
               id="input-date-end"
