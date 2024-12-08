@@ -30,7 +30,7 @@ exports[`AthleteResults.vue renders result list 1`] = `
             aria-busy="false"
             aria-colcount="4"
             class="table b-table table-hover table-sm"
-            id="__BVID__26"
+            id="__BVID__36"
             role="table"
           >
             <!---->
@@ -219,7 +219,7 @@ exports[`AthleteResults.vue renders result list 1`] = `
             aria-busy="false"
             aria-colcount="6"
             class="table b-table table-hover table-sm"
-            id="__BVID__36"
+            id="__BVID__46"
             role="table"
           >
             <!---->
@@ -851,6 +851,157 @@ exports[`AthleteResults.vue renders result list 1`] = `
             Loading...
           </span>
         </span>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div>
+        <h3>
+          contact.contact
+        </h3>
+         
+        <div
+          class="table-responsive-sm"
+        >
+          <table
+            aria-busy="false"
+            aria-colcount="3"
+            class="table b-table table-hover table-sm"
+            id="__BVID__24"
+            role="table"
+          >
+            <!---->
+            <!---->
+            <thead
+              class=""
+              role="rowgroup"
+            >
+              <!---->
+              <tr
+                class=""
+                role="row"
+              >
+                <th
+                  aria-colindex="1"
+                  aria-sort="descending"
+                  class="position-relative"
+                  role="columnheader"
+                  scope="col"
+                  tabindex="0"
+                >
+                  <div>
+                    date
+                  </div>
+                  <span
+                    class="sr-only"
+                  >
+                     (Click to sort ascending)
+                  </span>
+                </th>
+                <th
+                  aria-colindex="2"
+                  aria-sort="none"
+                  class="position-relative d-none d-lg-table-cell"
+                  role="columnheader"
+                  scope="col"
+                  tabindex="0"
+                >
+                  <div>
+                    event.event
+                  </div>
+                  <span
+                    class="sr-only"
+                  >
+                     (Click to sort ascending)
+                  </span>
+                </th>
+                <th
+                  aria-colindex="3"
+                  aria-sort="none"
+                  class="position-relative d-none d-md-table-cell"
+                  role="columnheader"
+                  scope="col"
+                  tabindex="0"
+                >
+                  <div>
+                    contact.type
+                  </div>
+                  <span
+                    class="sr-only"
+                  >
+                     (Click to sort ascending)
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              role="rowgroup"
+            >
+              <!---->
+              <tr
+                class=""
+                role="row"
+                tabindex="0"
+              >
+                <td
+                  aria-colindex="1"
+                  class=""
+                  role="cell"
+                />
+                <td
+                  aria-colindex="2"
+                  class="d-none d-lg-table-cell"
+                  role="cell"
+                >
+                  EventName
+                </td>
+                <td
+                  aria-colindex="3"
+                  class="d-none d-md-table-cell"
+                  role="cell"
+                >
+                  
+      contact.chief_range_officer
+    
+                </td>
+              </tr>
+              <tr
+                class=""
+                role="row"
+                tabindex="0"
+              >
+                <td
+                  aria-colindex="1"
+                  class=""
+                  role="cell"
+                />
+                <td
+                  aria-colindex="2"
+                  class="d-none d-lg-table-cell"
+                  role="cell"
+                />
+                <td
+                  aria-colindex="3"
+                  class="d-none d-md-table-cell"
+                  role="cell"
+                >
+                  
+      contact.competition_manager
+    
+                </td>
+              </tr>
+              <!---->
+              <!---->
+            </tbody>
+            <!---->
+          </table>
+        </div>
       </div>
     </div>
   </div>

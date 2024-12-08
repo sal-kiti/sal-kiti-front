@@ -25,6 +25,11 @@
         </div>
       </b-col>
     </b-row>
+    <b-row v-if="eventContacts && eventContacts.length > 0">
+      <b-col>
+        <AthleteEventContactList :eventContacts="eventContacts" />
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -38,6 +43,7 @@
 import { HTTP } from "../api/BaseApi.js";
 import errorParser from "../utils/ErrorParser";
 
+import AthleteEventContactList from "./AthleteEventContactList.vue";
 import AthletePersonalBestList from "./AthletePersonalBestList";
 import AthleteRecordsList from "./AthleteRecordsList";
 import AthleteResultsList from "./AthleteResultsList";
@@ -45,6 +51,7 @@ import AthleteResultsList from "./AthleteResultsList";
 export default {
   name: "AthleteResults",
   components: {
+    AthleteEventContactList,
     AthletePersonalBestList,
     AthleteRecordsList,
     AthleteResultsList
@@ -52,6 +59,7 @@ export default {
   data() {
     return {
       errors: {},
+      eventContacts: [],
       loadingResults: true,
       results: [],
       selectMode: "single"
@@ -59,8 +67,27 @@ export default {
   },
   mounted() {
     this.getResults(this.$route.params.athlete_id);
+    this.getEventContacts(this.$route.params.athlete_id);
   },
   methods: {
+    /**
+     * Fetch event contacts for athlete from API
+     *
+     * @param {number} id
+     * @returns {Promise<void>}
+     */
+    async getEventContacts(id) {
+      this.$set(this.errors, "main", null);
+      this.eventContacts = [];
+      HTTP.get("eventcontacts/?athlete=" + id)
+        .then((response) => {
+          this.eventContacts = response.data.results || {};
+        })
+        .catch((error) => {
+          this.$set(this.errors, "main", errorParser.generic.bind(this)(error));
+        })
+        .finally();
+    },
     /**
      * Fetch athlete results from API
      *

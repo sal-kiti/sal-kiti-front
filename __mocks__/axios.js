@@ -151,6 +151,11 @@ const eventcontacts = {
           }
         ]
       },
+      event_info: {
+        name: "EventName",
+        date_Start: "2019-01-22",
+        date_end: "2019-01-24"
+      },
       first_name: "Test",
       last_name: "Judge",
       email: "judge@example.org",
@@ -162,6 +167,7 @@ const eventcontacts = {
       type: "manager",
       athlete: null,
       athlete_info: null,
+      event_info: null,
       first_name: "Mana",
       last_name: "Ger",
       email: "manager@example.org",
@@ -1016,7 +1022,8 @@ const mock = jest.fn(
         if (
           params &&
           splitted[0] !== "recordlist" &&
-          splitted[0] !== "resultlist"
+          splitted[0] !== "resultlist" &&
+          splitted[0] !== "eventcontacts"
         ) {
           params.split("&").forEach(function (part) {
             let param = part.split("=");
