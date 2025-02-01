@@ -462,21 +462,18 @@ export default {
               )
             );
             partialResult.type = this.competitionResultTypes[r].id;
-            if (typeof result[keys[key]] == "string") {
-              let value = parseFloat(result[keys[key]].replace(",", "."));
-              if (isNaN(value)) {
-                partialResult.text = result[keys[key]];
-              } else {
-                partialResult.value = value;
-              }
-            } else {
-              partialResult.value = parseFloat(result[keys[key]]);
-            }
-            if (String(result[keys[key]]).includes(".")) {
-              partialResult.decimals =
-                String(result[keys[key]]).split(".")[1].length || 0;
-            } else {
+            let valueString = String(result[keys[key]]).replace(",", ".");
+            let value = parseFloat(valueString);
+            if (isNaN(value)) {
+              partialResult.text = result[keys[key]];
               partialResult.decimals = 0;
+            } else {
+              partialResult.value = value;
+              if (valueString.includes(".")) {
+                partialResult.decimals = valueString.split(".")[1].length || 0;
+              } else {
+                partialResult.decimals = 0;
+              }
             }
             if (
               !this.result.team &&
@@ -531,16 +528,10 @@ export default {
      */
     parseResult(i, keys) {
       if (keys.includes("result")) {
-        if (typeof this.results[i].result == "string") {
-          this.result.result = parseFloat(
-            this.results[i].result.replace(",", ".")
-          );
-        } else {
-          this.result.result = parseFloat(this.results[i].result);
-        }
-        if (String(this.result.result).includes(".")) {
-          this.result.decimals =
-            String(this.result.result).split(".")[1].length || 0;
+        let result = String(this.results[i].result).replace(",", ".");
+        this.result.result = parseFloat(result);
+        if (result.includes(".")) {
+          this.result.decimals = result.split(".")[1].length || 0;
         } else {
           this.result.decimals = 0;
         }
