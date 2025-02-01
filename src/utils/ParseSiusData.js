@@ -78,7 +78,11 @@ export default function (data) {
         result.position = parseInt(data[i][headers.rank]);
         let resultLines = 1;
         for (let l = 1; l < data.length - i; l++) {
-          if (data[i + l][headers.rank]) {
+          if (
+            data[i + l][headers.rank] ||
+            data[i + l][headers.id] ||
+            data[i + l][headers.name]
+          ) {
             resultLines = l;
             break;
           }
