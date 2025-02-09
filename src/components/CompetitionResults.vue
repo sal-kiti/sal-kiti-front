@@ -96,9 +96,9 @@
                   }}
                 </div>
               </template>
-              <template v-slot:cell(showcat)="data"
-                >({{ data.item.showcat }})</template
-              >
+              <template v-slot:cell(showcat)="data">{{
+                data.item.showcat
+              }}</template>
               <template v-slot:cell(athlete)="data">
                 <div v-if="data.item.athlete">
                   {{ data.item.first_name }}
