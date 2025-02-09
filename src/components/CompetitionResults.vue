@@ -488,7 +488,7 @@ export default {
         if (
           this.competition &&
           this.competition.type_info &&
-          this.competition.type_info.sport === 5
+          [5, 9].includes(this.competition.type_info.sport)
         ) {
           position = "position_pre";
         }
@@ -669,7 +669,7 @@ export default {
       if (
         this.competition &&
         this.competition.type_info &&
-        this.competition.type_info.sport === 5
+        [5, 9].includes(this.competition.type_info.sport)
       ) {
         return "position_pre";
       } else if (block === "preliminary" && this.resultBlocks.length > 1) {
