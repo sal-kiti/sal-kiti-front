@@ -82,7 +82,7 @@
         cols="3"
         v-if="
           $store.state.user.is_staff ||
-          event.organization in $store.state.user.manager
+          event.organization in $store.state.user.area_manager
         "
       >
         <dl>
@@ -105,7 +105,7 @@
         cols="12"
         v-if="
           $store.state.user.is_staff ||
-          event.organization in $store.state.user.manager
+          event.organization in $store.state.user.area_manager
         "
       >
         <dl>
@@ -118,7 +118,7 @@
         md="3"
         v-if="
           $store.state.user.is_staff ||
-          event.organization in $store.state.user.manager
+          event.organization in $store.state.user.area_manager
         "
       >
         <dl>
@@ -174,7 +174,7 @@
         md="3"
         v-if="
           $store.state.user.is_staff ||
-          event.organization in $store.state.user.manager
+          event.organization in $store.state.user.area_manager
         "
       >
         <dl>
@@ -230,7 +230,7 @@
         md="3"
         v-if="
           $store.state.user.is_staff ||
-          event.organization in $store.state.user.manager
+          event.organization in $store.state.user.area_manager
         "
       >
         <dl>

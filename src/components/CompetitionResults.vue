@@ -19,7 +19,7 @@
           v-if="
             $store.state.editMode &&
             ($store.state.user.is_staff ||
-              (competition.organization in $store.state.user.manager &&
+              (competition.organization in $store.state.user.area_manager &&
                 !competition.locked))
           "
           variant="outline-success"
@@ -184,7 +184,8 @@
                   v-if="
                     $store.state.editMode &&
                     ($store.state.user.is_staff ||
-                      (competition.organization in $store.state.user.manager &&
+                      (competition.organization in
+                        $store.state.user.area_manager &&
                         !competition.locked)) &&
                     !data.item.approved
                   "
@@ -198,7 +199,8 @@
                   v-if="
                     $store.state.editMode &&
                     ($store.state.user.is_staff ||
-                      (competition.organization in $store.state.user.manager &&
+                      (competition.organization in
+                        $store.state.user.area_manager &&
                         !competition.locked)) &&
                     data.item.approved
                   "

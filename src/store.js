@@ -12,7 +12,7 @@ export default new Vuex.Store({
     user: {
       is_authenticated: false,
       is_staff: false,
-      manager: []
+      area_manager: []
     },
     editMode: false
   },
@@ -43,7 +43,7 @@ export default new Vuex.Store({
           commit("setUserInfo", {
             is_authenticated: false,
             is_staff: false,
-            manager: [],
+            area_manager: [],
             error: error.response
           });
         });
