@@ -226,7 +226,7 @@ exports[`RecordsResults.vue renders result list 1`] = `
               >
                 <div>
                   
-              record.approved
+              record.preliminary
               
                   <!---->
                    
@@ -269,7 +269,88 @@ exports[`RecordsResults.vue renders result list 1`] = `
                 role="cell"
               >
                 
-            2019-01-01
+            
+            
+                <!---->
+              </td>
+            </tr>
+            <tr
+              class=""
+              role="row"
+            >
+              <td
+                aria-colindex="1"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              SC
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="2"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              600
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="3"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              record.approved
+              
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </td>
+              <td
+                aria-colindex="4"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              team: Athlete
+              
+                  <ul />
+                </div>
+              </td>
+              <td
+                aria-colindex="5"
+                class="d-none d-md-table-cell"
+                role="cell"
+              >
+                VA
+              </td>
+              <td
+                aria-colindex="6"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                <a>
+                  
+              Agnetanpolku
+            
+                </a>
+              </td>
+              <td
+                aria-colindex="7"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                
+            2018-01-01
             
                 <!---->
               </td>
@@ -345,7 +426,7 @@ exports[`RecordsResults.vue renders result list with management options 1`] = `
           aria-busy="false"
           aria-colcount="7"
           class="table b-table table-hover table-sm"
-          id="__BVID__26"
+          id="__BVID__28"
           role="table"
         >
           <!---->
@@ -511,24 +592,23 @@ exports[`RecordsResults.vue renders result list with management options 1`] = `
               >
                 <div>
                   
-              record.approved
+              record.preliminary
               
                   <button
-                    class="btn space-right btn-outline-danger btn-sm"
-                    name="approverecord-1"
+                    class="btn space-right btn-outline-success btn-sm"
                     type="button"
                   >
                     
-                record.cancel_approval
+                record.approve
               
                   </button>
                    
                   <button
-                    class="btn btn-outline-danger btn-sm"
+                    class="btn btn-danger btn-secondary"
                     type="button"
                   >
                     
-                record.set_historical
+                remove
               
                   </button>
                 </div>
@@ -569,7 +649,7 @@ exports[`RecordsResults.vue renders result list with management options 1`] = `
                 role="cell"
               >
                 
-            2019-01-01
+            
             
                 <a
                   class="btn btn-orange btn-sm btn-light"
@@ -579,6 +659,489 @@ exports[`RecordsResults.vue renders result list with management options 1`] = `
                   admin
             
                 </a>
+              </td>
+            </tr>
+            <tr
+              class=""
+              role="row"
+            >
+              <td
+                aria-colindex="1"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              SC
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="2"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              600
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="3"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              record.approved
+              
+                  <button
+                    class="btn space-right btn-outline-danger btn-sm"
+                    name="approverecord-2"
+                    type="button"
+                  >
+                    
+                record.cancel_approval
+              
+                  </button>
+                   
+                  <button
+                    class="btn btn-outline-danger btn-sm"
+                    type="button"
+                  >
+                    
+                record.set_historical
+              
+                  </button>
+                </div>
+              </td>
+              <td
+                aria-colindex="4"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              team: Athlete
+              
+                  <ul />
+                </div>
+              </td>
+              <td
+                aria-colindex="5"
+                class="d-none d-md-table-cell"
+                role="cell"
+              >
+                VA
+              </td>
+              <td
+                aria-colindex="6"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                <a>
+                  
+              Agnetanpolku
+            
+                </a>
+              </td>
+              <td
+                aria-colindex="7"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                
+            2018-01-01
+            
+                <a
+                  class="btn btn-orange btn-sm btn-light"
+                  href="#"
+                  target="_self"
+                >
+                  admin
+            
+                </a>
+              </td>
+            </tr>
+            <!---->
+            <!---->
+          </tbody>
+          <!---->
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RecordsResults.vue renders result list with management options for managers 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <h3
+        class="bg-sal-orange"
+      >
+        record.record
+      </h3>
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div
+        style="display: none;"
+      >
+        <span
+          class="spinner-border"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          >
+            Loading...
+          </span>
+        </span>
+      </div>
+       
+      <div>
+        <h4
+          class="bg-sal-orange"
+        >
+          
+          Paintball
+        
+        </h4>
+         
+        <table
+          aria-busy="false"
+          aria-colcount="7"
+          class="table b-table table-hover table-sm"
+          id="__BVID__49"
+          role="table"
+        >
+          <!---->
+          <!---->
+          <thead
+            class=""
+            role="rowgroup"
+          >
+            <!---->
+            <tr
+              class=""
+              role="row"
+            >
+              <th
+                aria-colindex="1"
+                aria-sort="ascending"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <div>
+                  result.category
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to sort descending)
+                </span>
+              </th>
+              <th
+                aria-colindex="2"
+                aria-sort="none"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <div>
+                  result.result
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to sort ascending)
+                </span>
+              </th>
+              <th
+                aria-colindex="3"
+                aria-sort="none"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <div>
+                  record.status
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to sort ascending)
+                </span>
+              </th>
+              <th
+                aria-colindex="4"
+                class="position-relative"
+                role="columnheader"
+                scope="col"
+              >
+                <div>
+                  athlete.athlete
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to clear sorting)
+                </span>
+              </th>
+              <th
+                aria-colindex="5"
+                class="position-relative d-none d-md-table-cell"
+                role="columnheader"
+                scope="col"
+              >
+                <div>
+                  athlete.club
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to clear sorting)
+                </span>
+              </th>
+              <th
+                aria-colindex="6"
+                class="position-relative d-none d-lg-table-cell"
+                role="columnheader"
+                scope="col"
+              >
+                <div>
+                  competition.competition
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to clear sorting)
+                </span>
+              </th>
+              <th
+                aria-colindex="7"
+                aria-sort="none"
+                class="position-relative d-none d-lg-table-cell"
+                role="columnheader"
+                scope="col"
+                tabindex="0"
+              >
+                <div>
+                  date
+                </div>
+                <span
+                  class="sr-only"
+                >
+                   (Click to sort ascending)
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <!---->
+            <tr
+              class=""
+              role="row"
+            >
+              <td
+                aria-colindex="1"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              SC
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="2"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              623,9
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="3"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              record.preliminary
+              
+                  <button
+                    class="btn space-right btn-outline-success btn-sm"
+                    type="button"
+                  >
+                    
+                record.approve
+              
+                  </button>
+                   
+                  <button
+                    class="btn btn-danger btn-secondary"
+                    type="button"
+                  >
+                    
+                remove
+              
+                  </button>
+                </div>
+              </td>
+              <td
+                aria-colindex="4"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              team: Archer
+              
+                  <ul />
+                </div>
+              </td>
+              <td
+                aria-colindex="5"
+                class="d-none d-md-table-cell"
+                role="cell"
+              >
+                LC
+              </td>
+              <td
+                aria-colindex="6"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                <a>
+                  
+              Agnetanpolku
+            
+                </a>
+              </td>
+              <td
+                aria-colindex="7"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                
+            
+            
+                <!---->
+              </td>
+            </tr>
+            <tr
+              class=""
+              role="row"
+            >
+              <td
+                aria-colindex="1"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              SC
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="2"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              600
+            
+                </div>
+              </td>
+              <td
+                aria-colindex="3"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              record.approved
+              
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </td>
+              <td
+                aria-colindex="4"
+                class=""
+                role="cell"
+              >
+                <div>
+                  
+              team: Athlete
+              
+                  <ul />
+                </div>
+              </td>
+              <td
+                aria-colindex="5"
+                class="d-none d-md-table-cell"
+                role="cell"
+              >
+                VA
+              </td>
+              <td
+                aria-colindex="6"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                <a>
+                  
+              Agnetanpolku
+            
+                </a>
+              </td>
+              <td
+                aria-colindex="7"
+                class="d-none d-lg-table-cell"
+                role="cell"
+              >
+                
+            2018-01-01
+            
+                <!---->
               </td>
             </tr>
             <!---->

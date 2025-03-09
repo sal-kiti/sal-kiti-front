@@ -26,6 +26,11 @@ const competitions = {
       name: "Demo Competition",
       description: "EC on the Village Field",
       competition: 1,
+      organization_info: {
+        abbreviation: "LC",
+        name: "Local Club"
+      },
+      organization: 1,
       permissions: {
         update: true,
         write: true,
@@ -56,6 +61,7 @@ const competitions = {
         name: "EventName"
       },
       competition: 1,
+      organization: 2,
       permissions: {
         update: false,
         write: false,
@@ -83,11 +89,13 @@ const events = {
         {
           id: 1,
           type: "10m Competition",
+          sport: 1,
           public: true
         },
         {
           id: 2,
           type: "50m Competition",
+          sport: 2,
           public: false
         }
       ],
@@ -917,9 +925,43 @@ const recordlist = {
       level: "VC",
       type: "Paintball",
       category: "SC",
+      approved: false,
+      date_start: null,
+      date_end: null,
+      permissions: {
+        update: true,
+        write: false,
+        read: true
+      }
+    },
+    {
+      id: 2,
+      result: {
+        first_name: "Apprentice",
+        last_name: "Athlete",
+        competition: {
+          name: "Agnetanpolku",
+          type_info: {
+            name: "Paintball",
+            abbreviation: "PB",
+            sport: 1
+          }
+        },
+        organization: "VA",
+        result: "600",
+        decimals: 0
+      },
+      level: "VC",
+      type: "Paintball",
+      category: "SC",
       approved: true,
-      date_start: "2019-01-01",
-      date_end: null
+      date_start: "2018-01-01",
+      date_end: null,
+      permissions: {
+        update: false,
+        write: false,
+        read: true
+      }
     }
   ]
 };

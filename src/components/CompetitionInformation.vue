@@ -82,14 +82,7 @@
           <dd>{{ competition.location }}</dd>
         </dl>
       </b-col>
-      <b-col
-        cols="6"
-        md="3"
-        v-if="
-          $store.state.user.is_staff ||
-          competition.organization in $store.state.user.area_manager
-        "
-      >
+      <b-col cols="6" md="3" v-if="$store.state.user.is_staff || isManager">
         <dl>
           <dt>{{ $t("competition.status") }}</dt>
           <dd v-if="competition.locked">
@@ -116,14 +109,7 @@
           </dd>
         </dl>
       </b-col>
-      <b-col
-        cols="6"
-        md="3"
-        v-if="
-          $store.state.user.is_staff ||
-          competition.organization in $store.state.user.area_manager
-        "
-      >
+      <b-col cols="6" md="3" v-if="$store.state.user.is_staff || isManager">
         <dl>
           <dt>{{ $t("competition.approved") }}</dt>
           <dd v-if="competition.approved">
@@ -150,14 +136,7 @@
           </dd>
         </dl>
       </b-col>
-      <b-col
-        cols="6"
-        md="3"
-        v-if="
-          $store.state.user.is_staff ||
-          competition.organization in $store.state.user.area_manager
-        "
-      >
+      <b-col cols="6" md="3" v-if="$store.state.user.is_staff || isManager">
         <dl>
           <dt>{{ $t("competition.visibility") }}</dt>
           <dd v-if="competition.public">
@@ -299,6 +278,32 @@ export default {
       } catch (err) {
         return false;
       }
+    },
+    /**
+     * Check if user is a sport manager for competition sport
+     *
+     * @returns {boolean}
+     */
+    isManager: function () {
+      if (
+        this.competition &&
+        this.competition.organization &&
+        this.$store.state.user.area_manager.includes(
+          this.competition.organization
+        )
+      ) {
+        return true;
+      }
+      if (
+        this.competition &&
+        this.competition.type_info &&
+        this.$store.state.user.sport_manager.includes(
+          this.competition.type_info.sport
+        )
+      ) {
+        return true;
+      }
+      return false;
     }
   },
   mounted() {

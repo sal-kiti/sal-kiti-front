@@ -44,4 +44,23 @@ describe("RecordsResults.vue", () => {
     await flushPromises();
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  it("renders result list with management options for managers", async () => {
+    state = {
+      editMode: true,
+      user: { is_authenticated: true, is_staff: false }
+    };
+    store = new Vuex.Store({ state });
+    const wrapper = mount(RecordsResults, {
+      localVue,
+      store,
+      stubs: { "router-link": RouterLinkStub },
+      propsData: {
+        searchParameters:
+          "?sport=1&level=1&category=1,2&type=1,2&approved=1&historical=0"
+      }
+    });
+    await flushPromises();
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });

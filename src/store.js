@@ -12,7 +12,8 @@ export default new Vuex.Store({
     user: {
       is_authenticated: false,
       is_staff: false,
-      area_manager: []
+      area_manager: [],
+      sport_manager: []
     },
     editMode: false
   },
@@ -44,6 +45,7 @@ export default new Vuex.Store({
             is_authenticated: false,
             is_staff: false,
             area_manager: [],
+            sport_manager: [],
             error: error.response
           });
         });

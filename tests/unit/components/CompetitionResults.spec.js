@@ -41,6 +41,113 @@ describe("CompetitionResults.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it("show management options for staff", async () => {
+    state = {
+      editMode: true,
+      user: {
+        is_authenticated: true,
+        is_staff: true,
+        is_superuser: false,
+        area_manager: [0],
+        sport_manager: []
+      }
+    };
+    store = new Vuex.Store({ state });
+    const $route = {
+      params: { competition_id: 1 }
+    };
+    const wrapper = mount(CompetitionResults, {
+      localVue,
+      store,
+      mocks: {
+        $route
+      },
+      propsData: {
+        competition: {
+          id: 1,
+          type: 1,
+          layout: 1
+        },
+        editPermission: false
+      },
+      stubs: { "router-link": RouterLinkStub }
+    });
+    await flushPromises();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("show management options for area managers", async () => {
+    state = {
+      editMode: true,
+      user: {
+        is_authenticated: true,
+        is_staff: false,
+        is_superuser: false,
+        area_manager: [1],
+        sport_manager: []
+      }
+    };
+    store = new Vuex.Store({ state });
+    const $route = {
+      params: { competition_id: 1 }
+    };
+    const wrapper = mount(CompetitionResults, {
+      localVue,
+      store,
+      mocks: {
+        $route
+      },
+      propsData: {
+        competition: {
+          id: 1,
+          type: 1,
+          organization: 1,
+          layout: 1
+        },
+        editPermission: false
+      },
+      stubs: { "router-link": RouterLinkStub }
+    });
+    await flushPromises();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it("show management options for sport managers", async () => {
+    state = {
+      editMode: true,
+      user: {
+        is_authenticated: true,
+        is_staff: false,
+        is_superuser: false,
+        area_manager: [0],
+        sport_manager: [1]
+      }
+    };
+    store = new Vuex.Store({ state });
+    const $route = {
+      params: { competition_id: 1 }
+    };
+    const wrapper = mount(CompetitionResults, {
+      localVue,
+      store,
+      mocks: {
+        $route
+      },
+      propsData: {
+        competition: {
+          id: 1,
+          type: 1,
+          type_info: { sport: 1 },
+          layout: 1
+        },
+        editPermission: false
+      },
+      stubs: { "router-link": RouterLinkStub }
+    });
+    await flushPromises();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("render error message on error", async () => {
     const $route = {
       params: { competition_id: 99 }

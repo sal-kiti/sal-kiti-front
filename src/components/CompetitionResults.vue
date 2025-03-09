@@ -17,10 +17,7 @@
         </b-button>
         <b-button
           v-if="
-            $store.state.editMode &&
-            ($store.state.user.is_staff ||
-              (competition.organization in $store.state.user.area_manager &&
-                !competition.locked))
+            $store.state.editMode && ($store.state.user.is_staff || isManager)
           "
           variant="outline-success"
           v-on:click="approveAll()"
@@ -168,7 +165,11 @@
                   {{ $t("result.details") }} </b-button
                 >&nbsp;
                 <b-button
-                  v-if="editPermission && $store.state.editMode"
+                  v-if="
+                    editPermission &&
+                    $store.state.editMode &&
+                    ($store.state.user.is_staff || !competition.locked)
+                  "
                   size="sm"
                   variant="outline-success"
                   :to="{
@@ -184,9 +185,7 @@
                   v-if="
                     $store.state.editMode &&
                     ($store.state.user.is_staff ||
-                      (competition.organization in
-                        $store.state.user.area_manager &&
-                        !competition.locked)) &&
+                      (isManager && !competition.locked)) &&
                     !data.item.approved
                   "
                   size="sm"
@@ -199,9 +198,7 @@
                   v-if="
                     $store.state.editMode &&
                     ($store.state.user.is_staff ||
-                      (competition.organization in
-                        $store.state.user.area_manager &&
-                        !competition.locked)) &&
+                      (isManager && !competition.locked)) &&
                     data.item.approved
                   "
                   size="sm"
@@ -302,6 +299,34 @@ export default {
           }
         }
       }
+    }
+  },
+  computed: {
+    /**
+     * Check if user is a sport manager for competition sport
+     *
+     * @returns {boolean}
+     */
+    isManager: function () {
+      if (
+        this.competition &&
+        this.competition.organization &&
+        this.$store.state.user.area_manager.includes(
+          this.competition.organization
+        )
+      ) {
+        return true;
+      }
+      if (
+        this.competition &&
+        this.competition.type_info &&
+        this.$store.state.user.sport_manager.includes(
+          this.competition.type_info.sport
+        )
+      ) {
+        return true;
+      }
+      return false;
     }
   },
   mounted() {
