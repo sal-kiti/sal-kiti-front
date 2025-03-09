@@ -38,6 +38,7 @@ export default function (data) {
         case "Nation":
         case "Nat":
         case "Seura":
+        case "Nation/Team":
           headers.organization = parseInt(col);
           break;
         case "Total":
