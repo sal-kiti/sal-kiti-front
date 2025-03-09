@@ -1,4 +1,38 @@
 # Changelog
+
+## 1.6.0 - 2025-03-09
+Required backend version: 1.6+
+
+### Changes
+- Added sport managers
+- Changed CI testing from Travis to GitHub Actions
+- Fixed empty result in the last line of Sius data
+- Updated SheetJS version and changed repository
+- Improved decimal checking for result values
+- Ignore case in organization name matching
+- Added custom sortKey for PRS results
+- Added new header for Sius-parser
+
+## 1.5.0 - 2024-12-16
+Required backend version: 1.5+
+
+### Changes
+- Added info page to list judge merits
+- Allow linking athletes as event contacts
+- Added listing of past applied events
+- Improved event and competition information
+- Added required tags to forms
+- Added scrolling to event contacts after posting event
+- Added list of event roles to Athlete information
+
+## 1.4.0 - 2024-06-21
+Required backend version: 1.4+
+
+### Changes
+- Added listing of Athlete's licenses and merits
+- Added judge and licensed to Athlete search
+- Fixed editPermission when loading competition
+
 ## 1.3.0 - 2023-12-17
 Required backend version: 1.3+
 
