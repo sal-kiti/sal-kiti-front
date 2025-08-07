@@ -240,6 +240,7 @@ const results = {
       decimals: 1,
       position: 1,
       approved: false,
+      public: true,
       info: "Testing",
       partial: [
         {
@@ -265,7 +266,8 @@ const results = {
       result: "206.400",
       decimals: 1,
       position: 2,
-      approved: false
+      approved: false,
+      public: true
     }
   ]
 };
@@ -383,7 +385,8 @@ const resultlist = {
           date_end: null
         }
       ],
-      approved: false
+      approved: false,
+      public: true
     },
     {
       id: 110,
@@ -482,7 +485,8 @@ const resultlist = {
           value: "367.00"
         }
       ],
-      approved: false
+      approved: false,
+      public: true
     },
     {
       id: 87,
@@ -520,6 +524,7 @@ const resultlist = {
       position: 3,
       position_pre: 3,
       approved: false,
+      public: true,
       partial: [
         {
           decimals: 0,

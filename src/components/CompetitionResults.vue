@@ -26,6 +26,18 @@
           {{ $t("result.approve_all") }}
         </b-button>
         <b-button
+          v-if="
+            editPermission &&
+            $store.state.editMode &&
+            ($store.state.user.is_staff || isManager || !competition.locked)
+          "
+          variant="outline-success"
+          v-on:click="publishAll()"
+          class="space-right float-right"
+        >
+          {{ $t("result.publish_all") }}
+        </b-button>
+        <b-button
           variant="outline-info"
           v-on:click="getMediaResults()"
           class="space-right float-right"
@@ -186,7 +198,8 @@
                     $store.state.editMode &&
                     ($store.state.user.is_staff ||
                       (isManager && !competition.locked)) &&
-                    !data.item.approved
+                    !data.item.approved &&
+                    data.item.public
                   "
                   size="sm"
                   variant="outline-success"
@@ -206,6 +219,37 @@
                   v-on:click="toggleApproval(data)"
                 >
                   {{ $t("result.cancel_approval") }} </b-button
+                >&nbsp;
+                <b-button
+                  v-if="
+                    editPermission &&
+                    $store.state.editMode &&
+                    ($store.state.user.is_staff ||
+                      isManager ||
+                      !competition.locked) &&
+                    !data.item.public
+                  "
+                  size="sm"
+                  variant="outline-success"
+                  v-on:click="togglePublic(data)"
+                >
+                  {{ $t("result.publish") }}
+                </b-button>
+                <b-button
+                  v-if="
+                    editPermission &&
+                    $store.state.editMode &&
+                    ($store.state.user.is_staff ||
+                      isManager ||
+                      !competition.locked) &&
+                    data.item.public &&
+                    !data.item.approved
+                  "
+                  size="sm"
+                  variant="outline-danger"
+                  v-on:click="togglePublic(data)"
+                >
+                  {{ $t("result.unpublish") }} </b-button
                 >&nbsp;
                 <b-button
                   v-if="$store.state.editMode && $store.state.user.is_staff"
@@ -347,7 +391,9 @@ export default {
         for (const result in this.results[category]) {
           if (
             !this.results[category][result].approved &&
-            !this.results[category][result].athlete.organization_info.external
+            !this.results[category][result].athlete.organization_info
+              .external &&
+            this.results[category][result].public
           ) {
             this.approveResult(category, result);
           }
@@ -369,6 +415,42 @@ export default {
       )
         .then((response) => {
           this.results[category][result].approved = response.data.approved;
+        })
+        .catch((error) => {
+          this.$set(this.errors, "main", errorParser.generic.bind(this)(error));
+        });
+    },
+    /**
+     * Publish all unpublished results
+     */
+    publishAll: function () {
+      this.$set(this.errors, "main", null);
+      for (const category in this.results) {
+        for (const result in this.results[category]) {
+          if (
+            !this.results[category][result].publish &&
+            !this.results[category][result].approved
+          ) {
+            this.publishResult(category, result);
+          }
+        }
+      }
+    },
+    /**
+     * Sets result as public (API patch)
+     *
+     * @param {string} category code
+     * @param {number} result id
+     * @returns {Promise<void>}
+     */
+    publishResult: async function (category, result) {
+      await HTTP.patch(
+        "results/" + this.results[category][result].id + "/",
+        { public: true },
+        this.config
+      )
+        .then((response) => {
+          this.results[category][result].public = response.data.public;
         })
         .catch((error) => {
           this.$set(this.errors, "main", errorParser.generic.bind(this)(error));
@@ -722,6 +804,26 @@ export default {
       )
         .then((response) => {
           data.item.approved = response.data.approved;
+        })
+        .catch((error) => {
+          this.$set(this.errors, "main", errorParser.generic.bind(this)(error));
+        });
+    },
+    /**
+     * Toggle public status for a single result (API patch)
+     *
+     * @param {object} data - result object
+     * @returns {Promise<void>}
+     */
+    togglePublic: async function (data) {
+      this.$set(this.errors, "main", null);
+      await HTTP.patch(
+        "results/" + data.item.id + "/",
+        { public: !data.item.public },
+        this.config
+      )
+        .then((response) => {
+          data.item.public = response.data.public;
         })
         .catch((error) => {
           this.$set(this.errors, "main", errorParser.generic.bind(this)(error));

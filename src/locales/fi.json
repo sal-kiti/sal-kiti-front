@@ -157,7 +157,10 @@
     "personal_best": "Parhaat tulokset",
     "kneeling": "Polvi",
     "standing": "Pysty",
-    "prone": "Makuu"
+    "prone": "Makuu",
+    "publish": "Julkaise",
+    "unpublish": "Piilota",
+    "publish_all": "Julkaise kaikki tulokset"
   },
   "search": {
     "search": "Haku",
@@ -288,6 +291,7 @@
     "default_category": "Oletus-sarja. Vaadittu jos tulostiedostossa ei ole Category-kenttää.",
     "debug_excel": "Lataa vianmääritystiedosto",
     "dry_run": "Testaa tuontia löytääksesi virheet, mutta älä tallenna tuloksia.",
+    "publish": "Julkaise tuodut tulokset",
     "error": {
       "label": "Virhe",
       "result": "\"result\" puuttuu",

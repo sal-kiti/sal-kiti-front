@@ -622,6 +622,11 @@ exports[`CompetitionResults.vue renders result list 1`] = `
                      
               
                     <!---->
+                     
+                    <!---->
+                     
+              
+                    <!---->
                   </td>
                 </tr>
                 <tr
@@ -748,6 +753,11 @@ exports[`CompetitionResults.vue renders result list 1`] = `
                     </button>
                      
               
+                    <!---->
+                     
+              
+                    <!---->
+                     
                     <!---->
                      
               
@@ -1072,6 +1082,11 @@ exports[`CompetitionResults.vue renders result list 1`] = `
                      
               
                     <!---->
+                     
+                    <!---->
+                     
+              
+                    <!---->
                   </td>
                 </tr>
                 <!---->
@@ -1117,6 +1132,8 @@ exports[`CompetitionResults.vue show management options for area managers 1`] = 
         result.approve_all
       
       </button>
+       
+      <!---->
        
       <button
         class="btn space-right float-right btn-outline-info"
@@ -1742,6 +1759,11 @@ exports[`CompetitionResults.vue show management options for area managers 1`] = 
                      
               
                     <!---->
+                     
+                    <!---->
+                     
+              
+                    <!---->
                   </td>
                 </tr>
                 <tr
@@ -1879,6 +1901,11 @@ exports[`CompetitionResults.vue show management options for area managers 1`] = 
                 result.approve
               
                     </button>
+                     
+                    <!---->
+                     
+              
+                    <!---->
                      
                     <!---->
                      
@@ -2206,6 +2233,11 @@ exports[`CompetitionResults.vue show management options for area managers 1`] = 
                      
               
                     <!---->
+                     
+                    <!---->
+                     
+              
+                    <!---->
                   </td>
                 </tr>
                 <!---->
@@ -2251,6 +2283,8 @@ exports[`CompetitionResults.vue show management options for sport managers 1`] =
         result.approve_all
       
       </button>
+       
+      <!---->
        
       <button
         class="btn space-right float-right btn-outline-info"
@@ -2876,6 +2910,11 @@ exports[`CompetitionResults.vue show management options for sport managers 1`] =
                      
               
                     <!---->
+                     
+                    <!---->
+                     
+              
+                    <!---->
                   </td>
                 </tr>
                 <tr
@@ -3013,6 +3052,11 @@ exports[`CompetitionResults.vue show management options for sport managers 1`] =
                 result.approve
               
                     </button>
+                     
+                    <!---->
+                     
+              
+                    <!---->
                      
                     <!---->
                      
@@ -3340,6 +3384,11 @@ exports[`CompetitionResults.vue show management options for sport managers 1`] =
                      
               
                     <!---->
+                     
+                    <!---->
+                     
+              
+                    <!---->
                   </td>
                 </tr>
                 <!---->
@@ -3385,6 +3434,8 @@ exports[`CompetitionResults.vue show management options for staff 1`] = `
         result.approve_all
       
       </button>
+       
+      <!---->
        
       <button
         class="btn space-right float-right btn-outline-info"
@@ -4009,6 +4060,11 @@ exports[`CompetitionResults.vue show management options for staff 1`] = `
                     <!---->
                      
               
+                    <!---->
+                     
+                    <!---->
+                     
+              
                     <a
                       class="btn btn-orange btn-sm btn-light"
                       href="#"
@@ -4154,6 +4210,11 @@ exports[`CompetitionResults.vue show management options for staff 1`] = `
                 result.approve
               
                     </button>
+                     
+                    <!---->
+                     
+              
+                    <!---->
                      
                     <!---->
                      
@@ -4483,6 +4544,11 @@ exports[`CompetitionResults.vue show management options for staff 1`] = `
                 result.approve
               
                     </button>
+                     
+                    <!---->
+                     
+              
+                    <!---->
                      
                     <!---->
                      

@@ -587,6 +587,9 @@ export default {
         if (this.form.dryRun) {
           this.result.dry_run = true;
         }
+        if (this.form.publish) {
+          this.result.publish = true;
+        }
         keys = Object.keys(this.results[i]);
         this.parseTeam(i, keys);
         this.parseCategory(i, keys);

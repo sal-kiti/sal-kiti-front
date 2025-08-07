@@ -158,7 +158,10 @@
     "personal_best": "Personal best",
     "kneeling": "Kneeling",
     "standing": "Standing",
-    "prone": "Prone"
+    "prone": "Prone",
+    "publish": "Publish",
+    "unpublish": "Hide",
+    "publish_all": "Publish all results"
   },
   "search": {
     "search": "Search",
@@ -289,6 +292,7 @@
     "default_category": "Default category. Required if the result file does not include Category-field.",
     "debug_excel": "Download debug file",
     "dry_run": "Test import to find errors but do not save results.",
+    "publish": "Publish imported results",
     "error": {
       "label": "Error",
       "result": "Missing \"result\"",

@@ -61,6 +61,13 @@
           >
             {{ $t("import.dry_run") }}
           </b-form-checkbox>
+          <b-form-checkbox
+            id="checkbox-publish"
+            v-model="form.publish"
+            name="checkbox-publish"
+          >
+            {{ $t("import.publish") }}
+          </b-form-checkbox>
           <b-button
             type="submit"
             variant="light"
@@ -159,7 +166,8 @@ export default {
         file: null,
         fileType: "excel",
         category: null,
-        dryRun: null
+        dryRun: null,
+        publish: false
       },
       headers: [],
       results: [],
